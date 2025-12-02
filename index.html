@@ -1,24 +1,23 @@
-<!DOCTYPE html>
+\<\!DOCTYPE html\>
 
+\<html lang="ja"\>
+\<head\>
+\<meta charset="UTF-8"\>
+\<title\>X BODY Labo 府中店｜20分でジム3〜4時間分の全身EMSトレーニング\</title\>
+\<meta name="description" content="エックスボディラボ（X BODY Labo）府中店公式サイト。20分の全身EMSトレーニングで、通常ジム3〜4時間分の効果。世界55カ国で利用されるX BODYで、忙しくても結果にこだわるボディメイク。LINEから体験予約・相談受付中。"\>
+\<meta name="viewport" content="width=device-width, initial-scale=1.0"\>
+\<style\>
+:root {
+\--primary: \#d62828;
+\--primary-dark: \#a71d1d;
+\--bg-light: \#f7f7f7;
+\--text-main: \#222222;
+\--text-sub: \#555555;
+\--border-light: \#e0e0e0;
+\--max-width: 1040px;
+}
 
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>X BODY Labo 府中店｜20分でジム3〜4時間分の全身EMSトレーニング</title>
-  <meta name="description" content="エックスボディラボ（X BODY Labo）府中店公式サイト。20分の全身EMSトレーニングで、通常ジム3〜4時間分の効果。世界55カ国で利用されるX BODYで、忙しくても結果にこだわるボディメイク。LINEから体験予約・相談受付中。">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    :root {
-      --primary: #d62828;
-      --primary-dark: #a71d1d;
-      --bg-light: #f7f7f7;
-      --text-main: #222222;
-      --text-sub: #555555;
-      --border-light: #e0e0e0;
-      --max-width: 1040px;
-    }
-
-
+```
 * {
   box-sizing: border-box;
 }
@@ -162,18 +161,16 @@ header {
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   font-weight: 700;
   font-size: 18px;
   color: var(--text-main);
 }
 
-.logo-mark {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: radial-gradient(circle at 30% 20%, #ffffff, #ffdddd 40%, #b30000 75%);
-  display: inline-block;
+/* 3-1 修正：ロゴ画像用クラス */
+.logo-img {
+  height: 32px;
+  width: auto;
 }
 
 nav {
@@ -404,6 +401,77 @@ nav {
   color: var(--text-sub);
 }
 
+/* 3-2 追加：料金表画像 */
+.price-images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+.price-image-item {
+  margin: 0;
+}
+.price-image-item img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+}
+.price-image-item figcaption {
+  font-size: 12px;
+  color: var(--text-sub);
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* 3-3 追加：トレーニング風景ギャラリー */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* 3-4 追加：トレーナー紹介 */
+.trainer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.trainer-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+}
+.trainer-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  border: 3px solid #fff5f5;
+}
+.trainer-name {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.trainer-text {
+  font-size: 14px;
+  color: var(--text-sub);
+  text-align: left;
+}
+
 /* Steps */
 .steps {
   display: grid;
@@ -509,6 +577,15 @@ nav {
   gap: 20px;
 }
 
+/* 3-5 追加：施設写真 */
+.facility-box img {
+  width: 100%;
+  height: 220px; /* Mapの高さに合わせる */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
 .map-dummy {
   border-radius: 12px;
   background: repeating-linear-gradient(
@@ -609,6 +686,21 @@ footer {
     grid-template-columns: 1.1fr 1fr;
   }
 
+  /* 3-2 PC対応 */
+  .price-images {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* 3-3 PC対応 */
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 3-4 PC対応 */
+  .trainer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .steps {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -617,8 +709,9 @@ footer {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  /* 3-5 PC対応（3カラム：情報/写真/地図） */
   .access-grid {
-    grid-template-columns: 1.1fr 1.2fr;
+    grid-template-columns: 1.2fr 1fr 1fr;
   }
 
   .footer-top {
@@ -635,609 +728,641 @@ footer {
     display: block;
   }
 }
+```
 
-  </style>
-</head>
-<body>
+\</style\>
+\</head\>
+\<body\>
 
+\<header\>
+\<div class="container header-inner"\>
+\<div class="logo"\>
+\<img src="[https://i.postimg.cc/wjKbxWkk/IMG-1649.jpg](https://i.postimg.cc/wjKbxWkk/IMG-1649.jpg)" alt="X BODY Labo ロゴ" class="logo-img"\>
+\<span\>X BODY Labo 府中店\</span\>
+\</div\>
+\<nav\>
+\<ul class="nav-list"\>
+\<li\>\<a href="\#for-beginner" class="nav-link"\>初めての方へ\</a\>\</li\>
+\<li\>\<a href="\#about-xbody" class="nav-link"\>X BODYとは\</a\>\</li\>
+\<li\>\<a href="\#course" class="nav-link"\>コース・料金\</a\>\</li\>
+\<li\>\<a href="\#voices" class="nav-link"\>お客様の声\</a\>\</li\>
+\<li\>\<a href="\#access" class="nav-link"\>アクセス\</a\>\</li\>
+\</ul\>
+\</nav\>
+\<div class="header-cta"\>
+\<a href="[https://lin.ee/p3oSjwk](https://lin.ee/p3oSjwk)" class="btn btn-primary btn-sm" target="\_blank" rel="noopener noreferrer"\>LINEで体験予約する\</a\>
+\</div\>
+\</div\>
+\</header\>
 
-  <!-- ================= Header ================= -->
+\<section class="hero"\>
+\<div class="container hero-inner"\>
+\<div class="hero-main"\>
+\<div class="hero-badge"\>
+\<span\>府中・中町｜全身EMSパーソナルジム\</span\>
+\</div\>
+\<h1 class="hero-title"\>たった20分で、ジム3〜4時間分の効果。<br>全身EMSトレーニング専門ジム。\</h1\>
+\<p class="hero-subtitle"\>
+世界55カ国で利用されている全身型EMS「X BODY」。<br>
+専用スーツで全身24カ所の筋肉を同時に刺激し、\<strong\>約20分で通常ジム3〜4時間分\</strong\>のトレーニング効果を目指します。
+\</p\>
+\<ul class="hero-point-list"\>
+\<li class="hero-point-item"\>
+\<span class="hero-point-dot"\>\</span\>
+\<span\>週1〜2回・約20分の短時間だから、忙しい方でも続けやすい\</span\>
+\</li\>
+\<li class="hero-point-item"\>
+\<span class="hero-point-dot"\>\</span\>
+\<span\>全身24カ所を同時アプローチし、ダイエット／筋力UP／体幹強化を効率よく\</span\>
+\</li\>
+\<li class="hero-point-item"\>
+\<span class="hero-point-dot"\>\</span\>
+\<span\>重りを使わないトレーニングで、関節への負担を抑えながらしっかり刺激\</span\>
+\</li\>
+\<li class="hero-point-item"\>
+\<span class="hero-point-dot"\>\</span\>
+\<span\>筋肉と血流にアプローチすることで、肩こりや腰痛などのお悩みにも対応\</span\>
+\</li\>
+\<li class="hero-point-item"\>
+\<span class="hero-point-dot"\>\</span\>
+\<span\>手ぶらで通えるから、仕事帰りやスキマ時間にも通いやすい\</span\>
+\</li\>
+\</ul\>
+\<div class="hero-cta-group"\>
+\<a href="[https://lin.ee/p3oSjwk](https://lin.ee/p3oSjwk)" class="btn btn-primary" target="\_blank" rel="noopener noreferrer"\>LINEで体験予約する\</a\>
+\<a href="[https://lin.ee/p3oSjwk](https://lin.ee/p3oSjwk)" class="btn btn-outline" target="\_blank" rel="noopener noreferrer"\>LINEで質問してみる\</a\>
+\</div\>
+\<p class="hero-note"\>
+※LINEから「体験希望」「質問」などお気軽にメッセージをお送りください。<br>
+スタッフが順次ご返信いたします。
+\</p\>
+\</div\>
+\<div class="hero-side"\>
+\<div class="hero-side-tag"\>ABOUT STUDIO\</div\>
+\<div class="hero-side-main"\>
+エックスボディラボ（X Body Labo）府中店
+\</div\>
+\<div class="hero-side-sub"\>
+〒183-0055 東京都府中市中町2-8-2 ローゼンハイム1F<br>
+府中駅から徒歩圏内の全身EMSパーソナルトレーニングジムです。
+\</div\>
+\<div class="hero-side-meta"\>
+営業時間（目安）：9:30〜21:30<br>
+お仕事帰り・スキマ時間にも通いやすいスタジオです。
+\</div\>
+\<div class="hero-side-pill"\>\</div\>
+\</div\>
+\</div\>
+\</section\>
 
+\<section class="section section--light" id="for-beginner"\>
+\<div class="container"\>
+\<h2 class="section-title-center"\>こんなお悩み、ありませんか？\</h2\>
+\<p class="section-lead"\>
+「運動が苦手」「ジムが続かない」「何から始めればいいかわからない」——<br>
+X BODY Labo 府中店は、そんな方のためのジムです。
+\</p\>
+\<div class="grid-two"\>
+\<div class="card"\>
+\<h3\>運動・ジムが続かない理由\</h3\>
+\<ul class="list-check"\>
+\<li\>仕事や家事・育児で、長時間のトレーニングに時間を割けない\</li\>
+\<li\>自己流トレーニングで結果が出ず、モチベーションが続かない\</li\>
+\<li\>ジムに行っても、何をどれくらいやればいいかよくわからない\</li\>
+\<li\>膝・腰など関節への不安があり、ハードな筋トレに抵抗がある\</li\>
+\<li\>肩こり・腰痛など体の不調も気になっていて、無理をしたくない\</li\>
+\</ul\>
+\<p class="subnote"\>
+「やらなきゃ」と思っていても、続かないのには理由があります。<br>
+X BODYは、その“続けにくさ”に正面から向き合ったトレーニングです。
+\</p\>
+\</div\>
+\<div class="card card--soft"\>
+\<h3\>その悩みを、20分の全身EMSで\</h3\>
+\<div class="highlight-box"\>
+週1〜2回・約20分。<br>
+全身24カ所の筋肉を同時に刺激することで、<br>
+「時間がない」「続かない」という壁を越えやすくします。
+\</div\>
+\<ul class="list-dot"\>
+\<li\>短時間 × 高効率で、忙しい方でも続けやすい\</li\>
+\<li\>専属トレーナーが強度を調整するので、運動初心者でも安心\</li\>
+\<li\>重りを使わないため、関節への負担を抑えながらしっかり筋肉にアプローチ\</li\>
+\<li\>血流改善を通じて、肩こり・腰痛などのケアも期待できます\</li\>
+\</ul\>
+\<a href="[https://lin.ee/p3oSjwk](https://lin.ee/p3oSjwk)" class="btn btn-primary btn-block btn-sm" target="\_blank" rel="noopener noreferrer"\>自分に合うかLINEで相談する\</a\>
+\</div\>
+\</div\>
+\</div\>
+\</section\>
 
-  <header>
-    <div class="container header-inner">
-      <div class="logo">
-        <span class="logo-mark"></span>
-        <span>X BODY Labo 府中店</span>
+\<section class="section" id="about-xbody"\>
+\<div class="container"\>
+\<h2 class="section-title-center"\>X BODYとは？\</h2\>
+\<p class="section-lead"\>
+X BODYは、\<strong\>全身型EMS（Electrical Muscle Stimulation）トレーニングシステム\</strong\>。<br>
+世界55カ国で利用されている、最先端の全身トレーニングです。
+\</p\>
+\<div class="grid-two"\>
+\<div\>
+\<h3\>20分で、ジム3〜4時間分のトレーニング\</h3\>
+\<p\>
+専用のボディスーツを着用し、電気刺激で筋肉にアプローチしながら体を動かすことで、<br>
+\<strong\>全身24カ所の筋肉群（身体のほぼ全ての筋肉）を同時にトレーニング\</strong\>します。
+\</p\>
+\<ul class="list-check"\>
+\<li\>トレーニング時間は約20分\</li\>
+\<li\>通常のスポーツジム約3〜4時間分にあたるトレーニング効果を目指せる\</li\>
+\<li\>全身一度に刺激するため、効率よくトレーニングできる\</li\>
+\</ul\>
+\<p\>
+「時間はないけれど、きちんと結果を出したい」。<br>
+そんな現代のライフスタイルに合わせて設計されたトレーニングシステムです。
+\</p\>
+\</div\>
+\<div\>
+\<h3\>専用スーツ×専属トレーナーで安心\</h3\>
+\<p\>
+X BODYでは、全身に電極が配置された専用スーツを着用し、<br>
+トレーナーが負荷や強度を細かく調整しながらトレーニングを行います。
+\</p\>
+\<ul class="list-check"\>
+\<li\>重りを使わないため、関節への負担を抑えながら筋肉をしっかり刺激\</li\>
+\<li\>強度はその場でトレーナーが調整するため、運動初心者も安心\</li\>
+\<li\>年齢・性別を問わず、幅広い方に対応しやすいトレーニング設計\</li\>
+\</ul\>
+\<p class="subnote"\>
+※ペースや体調を確認しながら進めていきます。ご不安な点は事前にお気軽にご相談ください。
+\</p\>
+\</div\>
+\</div\>
+\</div\>
+\</section\>
+
+\<section class="section section--light"\>
+\<div class="container"\>
+\<h2 class="section-title-center"\>X BODYで期待できる変化\</h2\>
+\<p class="section-lead"\>
+週1〜2回のX BODYトレーニングにより、<br>
+基礎代謝の向上や体脂肪燃焼、2〜3週間での身体の変化を目指します。
+\</p\>
+\<div class="grid-two"\>
+\<div class="card"\>
+\<h3\>ボディメイク・パフォーマンス面\</h3\>
+\<ul class="list-check"\>
+\<li\>基礎代謝が上がりやすくなり、日常的にエネルギーを消費しやすい体へ\</li\>
+\<li\>体脂肪燃焼を促し、体型・シルエットの変化を目指せる\</li\>
+\<li\>二の腕・お腹・お尻・ふくらはぎなど、全身24カ所へ効率よくアプローチ\</li\>
+\<li\>体幹の強化により、姿勢の安定・動きやすさの向上をサポート\</li\>
+\<li\>筋肉量の増加を通じて、日常生活での動作が軽く感じられやすくなる\</li\>
+\</ul\>
+\<p class="subnote"\>
+※感じ方には個人差がありますが、多くの方が2〜3週間ほどで「変化のきっかけ」を実感し始めています。
+\</p\>
+\</div\>
+\<div class="card"\>
+\<h3\>コンディション・体質面\</h3\>
+\<ul class="list-check"\>
+\<li\>筋肉をしなやかに保ちつつ、血流改善をサポート\</li\>
+\<li\>肩まわり・腰まわりへのアプローチにより、肩こり・腰痛のケアにも役立ちやすい\</li\>
+\<li\>体内酵素や内分泌成分の活性化を通じて、糖・脂肪代謝機能の改善を目指す\</li\>
+\<li\>「太りにくい体質」へのステップとしても活用しやすいトレーニング\</li\>
+\</ul\>
+\<a href="[https://lin.ee/p3oSjwk](https://lin.ee/p3oSjwk)" class="btn btn-outline btn-block btn-sm" target="\_blank" rel="noopener noreferrer"\>どんな効果が期待できるかLINEで聞いてみる\</a\>
+\</div\>
+\</div\>
+\</div\>
+\</section\>
+
+\<section class="section" id="training-scenes"\>
+\<div class="container"\>
+\<h2 class="section-title-center"\>トレーニング風景\</h2\>
+\<p class="section-lead"\>
+スタジオの雰囲気や、実際のトレーニングの様子がイメージしやすいよう、写真の一部をご紹介します。
+\</p\>
+\<div class="gallery-grid"\>
+\<div class="gallery-item"\>
+\<img src="[https://i.postimg.cc/Dz6Cg73b/IMG-1626.jpg](https://i.postimg.cc/Dz6Cg73b/IMG-1626.jpg)" alt="トレーニング風景1" loading="lazy"\>
+\</div\>
+\<div class="gallery-item"\>
+\<img src="[https://i.postimg.cc/FKNW378h/IMG-1642.jpg](https://i.postimg.cc/FKNW378h/IMG-1642.jpg)" alt="トレーニング風景2" loading="lazy"\>
+\</div\>
+\<div class="gallery-item"\>
+\<img src="[https://i.postimg.cc/hGcyTf6T/IMG-1645.jpg](https://i.postimg.cc/hGcyTf6T/IMG-1645.jpg)" alt="トレーニング風景3" loading="lazy"\>
+\</div\>
+\<div class="gallery-item"\>
+\<img src="[https://i.postimg.cc/VNmGndpC/IMG-1647.jpg](https://i.postimg.cc/VNmGndpC/IMG-1647.jpg)" alt="トレーニング風景4" loading="lazy"\>
+\</div\>
+\<div class="gallery-item"\>
+\<img src="[https://i.postimg.cc/PqT3YP9v/IMG-1648.jpg](https://i.postimg.cc/PqT3YP9v/IMG-1648.jpg)" alt="トレーニング風景5" loading="lazy"\>
+\</div\>
+\</div\>
+\<a href="[https://lin.ee/p3oSjwk](https://lin.ee/p3oSjwk)" class="btn btn-primary btn-block" target="\_blank" rel="noopener noreferrer"\>
+LINEで体験の空き状況を聞いてみる
+\</a\>
+\</div\>
+\</section\>
+
+\<section class="section section--light" id="trainers"\>
+\<div class="container"\>
+\<h2 class="section-title-center"\>トレーナー紹介\</h2\>
+\<p class="section-lead"\>
+X BODY Labo 府中店では、お一人おひとりに寄り添う専属トレーナーがサポートします。
+\</p\>
+\<div class="trainer-grid"\>
+\<div class="trainer-card"\>
+\<img src="[https://i.postimg.cc/KYf9Nmh4/IMG-1628.jpg](https://i.postimg.cc/KYf9Nmh4/IMG-1628.jpg)" alt="トレーナー カイト" class="trainer-img" loading="lazy"\>
+\<div class="trainer-name"\>Kaito\</div\>
+\<div class="trainer-text"\>
+「運動が苦手」「初めてで不安」という方こそ、ぜひお任せください。丁寧にカウンセリングを行い、無理のないペースで目標達成をサポートします。一緒に楽しく体を変えていきましょう！
+\</div\>
+\</div\>
+\<div class="trainer-card"\>
+\<img src="[https://i.postimg.cc/Bv4YHXkD/IMG-1629.jpg](https://i.postimg.cc/Bv4YHXkD/IMG-1629.jpg)" alt="トレーナー ラファ" class="trainer-img" loading="lazy"\>
+\<div class="trainer-name"\>Rafa\</div\>
+\<div class="trainer-text"\>
+効率的なボディメイクから日々の健康維持まで。お客様のライフスタイルに合わせたトレーニングをご提案します。短い時間でもしっかり効果を感じていただけるよう全力を尽くします。
+\</div\>
+\</div\>
+\</div\>
+\<a href="[https://lin.ee/p3oSjwk](https://lin.ee/p3oSjwk)" class="btn btn-outline btn-block btn-sm" target="\_blank" rel="noopener noreferrer"\>
+トレーナーについてLINEで質問する
+\</a\>
+\</div\>
+\</section\>
+
+\<section class="section"\>
+\<div class="container"\>
+\<h2 class="section-title-center"\>なぜEMSトレーニングなのか？\</h2\>
+\<p class="section-lead"\>
+「短時間でしっかり効かせる」ために、X BODYはEMSを選んでいます。<br>
+通常のトレーニングとの違いを、少しだけ専門的な視点でご紹介します。
+\</p\>
+\<div class="grid-two"\>
+\<div class="card"\>
+\<h3\>速筋へダイレクトにアプローチ\</h3\>
+\<p\>
+通常のトレーニングでは、比較的持久力の高い「遅筋」から優先的に使われ、<br>
+強度を徐々に上げていくことで、ようやく「速筋」にアプローチしていきます。
+\</p\>
+\<p\>
+EMSでは、\<strong\>電気刺激によって速筋に直接働きかける\</strong\>ことができます。<br>
+これにより、
+\</p\>
+\<ul class="list-check"\>
+\<li\>強い筋収縮による筋肥大\</li\>
+\<li\>筋肥大に伴う内分泌の活性化\</li\>
+\</ul\>
+\<p\>
+などを効率的に促し、短時間でのトレーニング効果を目指します。
+\</p\>
+\</div\>
+\<div class="card"\>
+\<h3\>「続けやすさ」と「体質づくり」\</h3\>
+\<p\>
+高負荷の筋トレを長時間続けるのは、身体的にも精神的にもハードルがあります。<br>
+EMSトレーニングでは、
+\</p\>
+\<ul class="list-check"\>
+\<li\>トレーナーが強度を管理する「受動的トレーニング」\</li\>
+\<li\>約20分という短時間で完結\</li\>
+\</ul\>
+\<p\>
+という特徴により、\<strong\>気分的な負担を抑えながら継続しやすい\</strong\>環境をつくります。
+\</p\>
+\<p\>
+EMSは医療用途でも使われており、<br>
+体内酵素や内分泌成分の活性化を通じて糖・脂肪代謝機能の改善を促し、<br>
+\<strong\>「太りにくく、動きやすい体質」へのステップ\</strong\>としても活用されています。
+\</p\>
+\</div\>
+\</div\>
+\</div\>
+\</section\>
+
+\<section class="section section--light" id="course"\>
+\<div class="container"\>
+\<h2 class="section-title-center"\>コース・料金\</h2\>
+\<p class="section-lead"\>
+X BODY Labo 府中店では、\<strong\>短時間 × 高効率のX BODYトレーニング\</strong\>を中心に、<br>
+シンプルでわかりやすい料金体系をご用意しています。
+\</p\>
+\<div class="grid-two"\>
+\<div class="card"\>
+\<span class="badge-pill"\>XBODYコース\</span\>
+\<h3\>短時間で多大な効果を目指す、メインコース\</h3\>
+\<p\>
+全身の筋肉を同時に刺激する専用のボディスーツを着用し、<br>
+約10〜20分のトレーニングで、\<strong\>ジム3〜4時間分に相当するトレーニング効果\</strong\>を目指します。
+\</p\>
+\<table style="width:100%; border-collapse:collapse; margin:12px 0 10px; font-size:14px;"\>
+\<tr\>
+\<td style="border-bottom:1px solid var(--border-light); padding:6px 0; width:35%;"\>入会金\</td\>
+\<td style="border-bottom:1px solid var(--border-light); padding:6px 0;"\>\<strong\>20,000円（税別）\</strong\>\</td\>
+\</tr\>
+\<tr\>
+\<td style="border-bottom:1px solid var(--border-light); padding:6px 0;"\>1回料金\</td\>
+\<td style="border-bottom:1px solid var(--border-light); padding:6px 0;"\>\<strong\>5,000円（税別）\</strong\>\</td\>
+\</tr\>
+\<tr\>
+\<td style="border-bottom:1px solid var(--border-light); padding:6px 0;"\>時間目安\</td\>
+\<td style="border-bottom:1px solid var(--border-light); padding:6px 0;"\>約10〜20分（カウンセリング別）\</td\>
+\</tr\>
+\<tr\>
+\<td style="padding:6px 0;"\>頻度の目安\</td\>
+\<td style="padding:6px 0;"\>週1〜2回\</td\>
+\</tr\>
+\</table\>
+
+```
+      <div class="price-images">
+        <figure class="price-image-item">
+          <img src="[https://i.postimg.cc/9fC8ZrKz/IMG-1623.jpg](https://i.postimg.cc/9fC8ZrKz/IMG-1623.jpg)" alt="トレーニングメニュー料金表1" loading="lazy">
+          <figcaption>トレーニングメニュー料金表1</figcaption>
+        </figure>
+        <figure class="price-image-item">
+          <img src="[https://i.postimg.cc/SKkTCJ3R/IMG-1625.jpg](https://i.postimg.cc/SKkTCJ3R/IMG-1625.jpg)" alt="トレーニングメニュー料金表2" loading="lazy">
+          <figcaption>トレーニングメニュー料金表2</figcaption>
+        </figure>
       </div>
-      <nav>
-        <ul class="nav-list">
-          <li><a href="#for-beginner" class="nav-link">初めての方へ</a></li>
-          <li><a href="#about-xbody" class="nav-link">X BODYとは</a></li>
-          <li><a href="#course" class="nav-link">コース・料金</a></li>
-          <li><a href="#voices" class="nav-link">お客様の声</a></li>
-          <li><a href="#access" class="nav-link">アクセス</a></li>
-        </ul>
-      </nav>
-      <div class="header-cta">
-        <a href="https://lin.ee/p3oSjwk" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">LINEで体験予約する</a>
-      </div>
-    </div>
-  </header>
 
-
-  <!-- ================= Hero ================= -->
-
-
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-main">
-        <div class="hero-badge">
-          <span>府中・中町｜全身EMSパーソナルジム</span>
-        </div>
-        <h1 class="hero-title">たった20分で、ジム3〜4時間分の効果。<br>全身EMSトレーニング専門ジム。</h1>
-        <p class="hero-subtitle">
-          世界55カ国で利用されている全身型EMS「X BODY」。<br>
-          専用スーツで全身24カ所の筋肉を同時に刺激し、<strong>約20分で通常ジム3〜4時間分</strong>のトレーニング効果を目指します。
-        </p>
-        <ul class="hero-point-list">
-          <li class="hero-point-item">
-            <span class="hero-point-dot"></span>
-            <span>週1〜2回・約20分の短時間だから、忙しい方でも続けやすい</span>
-          </li>
-          <li class="hero-point-item">
-            <span class="hero-point-dot"></span>
-            <span>全身24カ所を同時アプローチし、ダイエット／筋力UP／体幹強化を効率よく</span>
-          </li>
-          <li class="hero-point-item">
-            <span class="hero-point-dot"></span>
-            <span>重りを使わないトレーニングで、関節への負担を抑えながらしっかり刺激</span>
-          </li>
-          <li class="hero-point-item">
-            <span class="hero-point-dot"></span>
-            <span>筋肉と血流にアプローチすることで、肩こりや腰痛などのお悩みにも対応</span>
-          </li>
-          <li class="hero-point-item">
-            <span class="hero-point-dot"></span>
-            <span>手ぶらで通えるから、仕事帰りやスキマ時間にも通いやすい</span>
-          </li>
-        </ul>
-        <div class="hero-cta-group">
-          <a href="https://lin.ee/p3oSjwk" class="btn btn-primary" target="_blank" rel="noopener noreferrer">LINEで体験予約する</a>
-          <a href="https://lin.ee/p3oSjwk" class="btn btn-outline" target="_blank" rel="noopener noreferrer">LINEで質問してみる</a>
-        </div>
-        <p class="hero-note">
-          ※LINEから「体験希望」「質問」などお気軽にメッセージをお送りください。<br>
-          スタッフが順次ご返信いたします。
-        </p>
-      </div>
-      <div class="hero-side">
-        <div class="hero-side-tag">ABOUT STUDIO</div>
-        <div class="hero-side-main">
-          エックスボディラボ（X Body Labo）府中店
-        </div>
-        <div class="hero-side-sub">
-          〒183-0055 東京都府中市中町2-8-2 ローゼンハイム1F<br>
-          府中駅から徒歩圏内の全身EMSパーソナルトレーニングジムです。
-        </div>
-        <div class="hero-side-meta">
-          営業時間（目安）：9:30〜21:30<br>
-          お仕事帰り・スキマ時間にも通いやすいスタジオです。
-        </div>
-        <div class="hero-side-pill"></div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ================= 悩み共感 ================= -->
-
-
-  <section class="section section--light" id="for-beginner">
-    <div class="container">
-      <h2 class="section-title-center">こんなお悩み、ありませんか？</h2>
-      <p class="section-lead">
-        「運動が苦手」「ジムが続かない」「何から始めればいいかわからない」——<br>
-        X BODY Labo 府中店は、そんな方のためのジムです。
+      <p class="subnote" style="margin-top:16px;">
+        ※料金は一例です。詳細やキャンペーンなどは、最新情報をLINEにてご確認ください。
       </p>
-      <div class="grid-two">
-        <div class="card">
-          <h3>運動・ジムが続かない理由</h3>
-          <ul class="list-check">
-            <li>仕事や家事・育児で、長時間のトレーニングに時間を割けない</li>
-            <li>自己流トレーニングで結果が出ず、モチベーションが続かない</li>
-            <li>ジムに行っても、何をどれくらいやればいいかよくわからない</li>
-            <li>膝・腰など関節への不安があり、ハードな筋トレに抵抗がある</li>
-            <li>肩こり・腰痛など体の不調も気になっていて、無理をしたくない</li>
-          </ul>
-          <p class="subnote">
-            「やらなきゃ」と思っていても、続かないのには理由があります。<br>
-            X BODYは、その“続けにくさ”に正面から向き合ったトレーニングです。
-          </p>
-        </div>
-        <div class="card card--soft">
-          <h3>その悩みを、20分の全身EMSで</h3>
-          <div class="highlight-box">
-            週1〜2回・約20分。<br>
-            全身24カ所の筋肉を同時に刺激することで、<br>
-            「時間がない」「続かない」という壁を越えやすくします。
-          </div>
-          <ul class="list-dot">
-            <li>短時間 × 高効率で、忙しい方でも続けやすい</li>
-            <li>専属トレーナーが強度を調整するので、運動初心者でも安心</li>
-            <li>重りを使わないため、関節への負担を抑えながらしっかり筋肉にアプローチ</li>
-            <li>血流改善を通じて、肩こり・腰痛などのケアも期待できます</li>
-          </ul>
-          <a href="https://lin.ee/p3oSjwk" class="btn btn-primary btn-block btn-sm" target="_blank" rel="noopener noreferrer">自分に合うかLINEで相談する</a>
-        </div>
-      </div>
+      <a href="[https://lin.ee/p3oSjwk](https://lin.ee/p3oSjwk)" class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer">LINEで体験の空き状況を確認する</a>
     </div>
-  </section>
-
-
-  <!-- ================= X BODYとは ================= -->
-
-
-  <section class="section" id="about-xbody">
-    <div class="container">
-      <h2 class="section-title-center">X BODYとは？</h2>
-      <p class="section-lead">
-        X BODYは、<strong>全身型EMS（Electrical Muscle Stimulation）トレーニングシステム</strong>。<br>
-        世界55カ国で利用されている、最先端の全身トレーニングです。
+    <div class="card">
+      <h3>まずは「体験トレーニング」から</h3>
+      <p>
+        初めての方には、<strong>カウンセリング付きの体験トレーニング</strong>がおすすめです。<br>
+        体調やお悩み、目標をお伺いしたうえで、無理のない範囲から始めていきます。
       </p>
-      <div class="grid-two">
-        <div>
-          <h3>20分で、ジム3〜4時間分のトレーニング</h3>
-          <p>
-            専用のボディスーツを着用し、電気刺激で筋肉にアプローチしながら体を動かすことで、<br>
-            <strong>全身24カ所の筋肉群（身体のほぼ全ての筋肉）を同時にトレーニング</strong>します。
-          </p>
-          <ul class="list-check">
-            <li>トレーニング時間は約20分</li>
-            <li>通常のスポーツジム約3〜4時間分にあたるトレーニング効果を目指せる</li>
-            <li>全身一度に刺激するため、効率よくトレーニングできる</li>
-          </ul>
-          <p>
-            「時間はないけれど、きちんと結果を出したい」。<br>
-            そんな現代のライフスタイルに合わせて設計されたトレーニングシステムです。
-          </p>
-        </div>
-        <div>
-          <h3>専用スーツ×専属トレーナーで安心</h3>
-          <p>
-            X BODYでは、全身に電極が配置された専用スーツを着用し、<br>
-            トレーナーが負荷や強度を細かく調整しながらトレーニングを行います。
-          </p>
-          <ul class="list-check">
-            <li>重りを使わないため、関節への負担を抑えながら筋肉をしっかり刺激</li>
-            <li>強度はその場でトレーナーが調整するため、運動初心者も安心</li>
-            <li>年齢・性別を問わず、幅広い方に対応しやすいトレーニング設計</li>
-          </ul>
-          <p class="subnote">
-            ※ペースや体調を確認しながら進めていきます。ご不安な点は事前にお気軽にご相談ください。
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ================= 期待できる変化 ================= -->
-
-
-  <section class="section section--light">
-    <div class="container">
-      <h2 class="section-title-center">X BODYで期待できる変化</h2>
-      <p class="section-lead">
-        週1〜2回のX BODYトレーニングにより、<br>
-        基礎代謝の向上や体脂肪燃焼、2〜3週間での身体の変化を目指します。
+      <ul class="list-check">
+        <li>トレーニング内容や刺激の強さを実際に体感できる</li>
+        <li>自分の生活リズムで通えるかどうか、イメージがつきやすい</li>
+        <li>続けていく場合のプランや回数も、その場でご相談いただけます</li>
+      </ul>
+      <p class="subnote">
+        体験料金・所要時間などは、時期やキャンペーンにより異なる場合があります。<br>
+        まずはLINEからお気軽にお問い合わせください。
       </p>
-      <div class="grid-two">
-        <div class="card">
-          <h3>ボディメイク・パフォーマンス面</h3>
-          <ul class="list-check">
-            <li>基礎代謝が上がりやすくなり、日常的にエネルギーを消費しやすい体へ</li>
-            <li>体脂肪燃焼を促し、体型・シルエットの変化を目指せる</li>
-            <li>二の腕・お腹・お尻・ふくらはぎなど、全身24カ所へ効率よくアプローチ</li>
-            <li>体幹の強化により、姿勢の安定・動きやすさの向上をサポート</li>
-            <li>筋肉量の増加を通じて、日常生活での動作が軽く感じられやすくなる</li>
-          </ul>
-          <p class="subnote">
-            ※感じ方には個人差がありますが、多くの方が2〜3週間ほどで「変化のきっかけ」を実感し始めています。
-          </p>
-        </div>
-        <div class="card">
-          <h3>コンディション・体質面</h3>
-          <ul class="list-check">
-            <li>筋肉をしなやかに保ちつつ、血流改善をサポート</li>
-            <li>肩まわり・腰まわりへのアプローチにより、肩こり・腰痛のケアにも役立ちやすい</li>
-            <li>体内酵素や内分泌成分の活性化を通じて、糖・脂肪代謝機能の改善を目指す</li>
-            <li>「太りにくい体質」へのステップとしても活用しやすいトレーニング</li>
-          </ul>
-          <a href="https://lin.ee/p3oSjwk" class="btn btn-outline btn-block btn-sm" target="_blank" rel="noopener noreferrer">どんな効果が期待できるかLINEで聞いてみる</a>
-        </div>
-      </div>
+      <a href="[https://lin.ee/p3oSjwk](https://lin.ee/p3oSjwk)" class="btn btn-outline btn-block" target="_blank" rel="noopener noreferrer">LINEで体験トレーニングについて相談する</a>
     </div>
-  </section>
-
-
-  <!-- ================= なぜEMSなのか ================= -->
-
-
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title-center">なぜEMSトレーニングなのか？</h2>
-      <p class="section-lead">
-        「短時間でしっかり効かせる」ために、X BODYはEMSを選んでいます。<br>
-        通常のトレーニングとの違いを、少しだけ専門的な視点でご紹介します。
-      </p>
-      <div class="grid-two">
-        <div class="card">
-          <h3>速筋へダイレクトにアプローチ</h3>
-          <p>
-            通常のトレーニングでは、比較的持久力の高い「遅筋」から優先的に使われ、<br>
-            強度を徐々に上げていくことで、ようやく「速筋」にアプローチしていきます。
-          </p>
-          <p>
-            EMSでは、<strong>電気刺激によって速筋に直接働きかける</strong>ことができます。<br>
-            これにより、
-          </p>
-          <ul class="list-check">
-            <li>強い筋収縮による筋肥大</li>
-            <li>筋肥大に伴う内分泌の活性化</li>
-          </ul>
-          <p>
-            などを効率的に促し、短時間でのトレーニング効果を目指します。
-          </p>
-        </div>
-        <div class="card">
-          <h3>「続けやすさ」と「体質づくり」</h3>
-          <p>
-            高負荷の筋トレを長時間続けるのは、身体的にも精神的にもハードルがあります。<br>
-            EMSトレーニングでは、
-          </p>
-          <ul class="list-check">
-            <li>トレーナーが強度を管理する「受動的トレーニング」</li>
-            <li>約20分という短時間で完結</li>
-          </ul>
-          <p>
-            という特徴により、<strong>気分的な負担を抑えながら継続しやすい</strong>環境をつくります。
-          </p>
-          <p>
-            EMSは医療用途でも使われており、<br>
-            体内酵素や内分泌成分の活性化を通じて糖・脂肪代謝機能の改善を促し、<br>
-            <strong>「太りにくく、動きやすい体質」へのステップ</strong>としても活用されています。
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ================= コース・料金 ================= -->
-
-
-  <section class="section section--light" id="course">
-    <div class="container">
-      <h2 class="section-title-center">コース・料金</h2>
-      <p class="section-lead">
-        X BODY Labo 府中店では、<strong>短時間 × 高効率のX BODYトレーニング</strong>を中心に、<br>
-        シンプルでわかりやすい料金体系をご用意しています。
-      </p>
-      <div class="grid-two">
-        <div class="card">
-          <span class="badge-pill">XBODYコース</span>
-          <h3>短時間で多大な効果を目指す、メインコース</h3>
-          <p>
-            全身の筋肉を同時に刺激する専用のボディスーツを着用し、<br>
-            約10〜20分のトレーニングで、<strong>ジム3〜4時間分に相当するトレーニング効果</strong>を目指します。
-          </p>
-          <table style="width:100%; border-collapse:collapse; margin:12px 0 10px; font-size:14px;">
-            <tr>
-              <td style="border-bottom:1px solid var(--border-light); padding:6px 0; width:35%;">入会金</td>
-              <td style="border-bottom:1px solid var(--border-light); padding:6px 0;"><strong>20,000円（税別）</strong></td>
-            </tr>
-            <tr>
-              <td style="border-bottom:1px solid var(--border-light); padding:6px 0;">1回料金</td>
-              <td style="border-bottom:1px solid var(--border-light); padding:6px 0;"><strong>5,000円（税別）</strong></td>
-            </tr>
-            <tr>
-              <td style="border-bottom:1px solid var(--border-light); padding:6px 0;">時間目安</td>
-              <td style="border-bottom:1px solid var(--border-light); padding:6px 0;">約10〜20分（カウンセリング別）</td>
-            </tr>
-            <tr>
-              <td style="padding:6px 0;">頻度の目安</td>
-              <td style="padding:6px 0;">週1〜2回</td>
-            </tr>
-          </table>
-          <p class="subnote">
-            ※料金は一例です。詳細やキャンペーンなどは、最新情報をLINEにてご確認ください。
-          </p>
-          <a href="https://lin.ee/p3oSjwk" class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer">LINEで体験の空き状況を確認する</a>
-        </div>
-        <div class="card">
-          <h3>まずは「体験トレーニング」から</h3>
-          <p>
-            初めての方には、<strong>カウンセリング付きの体験トレーニング</strong>がおすすめです。<br>
-            体調やお悩み、目標をお伺いしたうえで、無理のない範囲から始めていきます。
-          </p>
-          <ul class="list-check">
-            <li>トレーニング内容や刺激の強さを実際に体感できる</li>
-            <li>自分の生活リズムで通えるかどうか、イメージがつきやすい</li>
-            <li>続けていく場合のプランや回数も、その場でご相談いただけます</li>
-          </ul>
-          <p class="subnote">
-            体験料金・所要時間などは、時期やキャンペーンにより異なる場合があります。<br>
-            まずはLINEからお気軽にお問い合わせください。
-          </p>
-          <a href="https://lin.ee/p3oSjwk" class="btn btn-outline btn-block" target="_blank" rel="noopener noreferrer">LINEで体験トレーニングについて相談する</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ================= 流れ ================= -->
-
-
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title-center">体験〜入会までの流れ</h2>
-      <p class="section-lead">
-        ご不安をできるだけ少なくした状態でスタートしていただくために、<br>
-        X BODY Labo 府中店では、体験前後のご説明とカウンセリングを大切にしています。
-      </p>
-      <div class="steps">
-        <div class="step-item">
-          <div class="step-label">STEP 1</div>
-          <div class="step-title">LINEで予約・相談</div>
-          <div class="step-desc">
-            まずはLINEにて「体験希望」「質問」など簡単にメッセージをお送りください。<br>
-            ご希望の日時やご不安な点なども合わせてお知らせいただけます。
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-label">STEP 2</div>
-          <div class="step-title">カウンセリング</div>
-          <div class="step-desc">
-            当日は、現在の体調や運動経験、気になる部位、目標などをお伺いします。<br>
-            EMSが初めての方でも、仕組みから丁寧にご説明します。
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-label">STEP 3</div>
-          <div class="step-title">体験トレーニング（約20分）</div>
-          <div class="step-desc">
-            専用スーツを着用し、全身EMSトレーニングを体験いただきます。<br>
-            強度はその場でトレーナーが細かく調整しますのでご安心ください。
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-label">STEP 4</div>
-          <div class="step-title">振り返り・プランのご提案</div>
-          <div class="step-desc">
-            体験後、感じたことやご希望を伺いながら、通い方の目安やプランをご提案します。<br>
-            ご納得いただいたうえで、続けるかどうかをお決めいただけます。
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-label">STEP 5</div>
-          <div class="step-title">ご希望の方のみご入会</div>
-          <div class="step-desc">
-            その場で無理に勧誘することはありません。<br>
-            一度持ち帰ってじっくり検討いただくことも可能です。
-          </div>
-        </div>
-      </div>
-      <a href="https://lin.ee/p3oSjwk" class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer">まずはLINEで簡単予約する</a>
-    </div>
-  </section>
-
-
-  <!-- ================= お客様の声 / Before After ================= -->
-
-
-  <section class="section section--light" id="voices">
-    <div class="container">
-      <h2 class="section-title-center">お客様の声・Before &amp; After</h2>
-      <p class="section-lead">
-        実際にX BODYを続けている方からいただいた声の一部をご紹介します。<br>
-        ※内容はイメージしやすいように要約した例です。
-      </p>
-      <div class="voices">
-        <div class="voice-item">
-          <div class="voice-meta">30代女性／デスクワーク</div>
-          <div class="voice-text">
-            「運動が苦手でジムも続かなかったのですが、20分で終わるのと、<br>
-            トレーナーさんが全部メニューを考えてくれるので通いやすいです。<br>
-            2〜3週間でズボンのウエストにゆとりが出てきて驚きました。」
-          </div>
-        </div>
-        <div class="voice-item">
-          <div class="voice-meta">40代男性／営業職</div>
-          <div class="voice-text">
-            「出張や残業も多く、普通のジムは続きませんでした。<br>
-            ここは仕事帰りにサクッと寄れて、しっかり追い込めるので効率がいいです。<br>
-            体幹が安定して、腰の重だるさも軽くなった気がします。」
-          </div>
-        </div>
-        <div class="voice-item">
-          <div class="voice-meta">50代女性／主婦</div>
-          <div class="voice-text">
-            「膝や腰が心配で激しい運動は避けていましたが、<br>
-            重りを使わないと聞いて思い切って体験しました。<br>
-            無理のない範囲で調整してもらえるので、安心して続けられています。」
-          </div>
-        </div>
-      </div>
-
-
-  <div class="card" style="margin-bottom:20px;">
-    <h3>Before &amp; After（イメージ）</h3>
-    <div class="ba-grid">
-      <div class="ba-box">
-        BEFORE<br>
-        （お腹まわり・姿勢・肩こりなど）<br>
-        写真挿入イメージ
-      </div>
-      <div class="ba-box">
-        AFTER<br>
-        （ウエストの変化・姿勢改善など）<br>
-        写真挿入イメージ
-      </div>
-    </div>
-    <p class="subnote">
-      ※実際のBefore/After写真を掲載する場合は、お客様からの許可をいただいたうえで差し替えとなります。
-    </p>
   </div>
-
-  <a href="https://lin.ee/p3oSjwk" class="btn btn-outline btn-block" target="_blank" rel="noopener noreferrer">自分も変われるか、LINEで相談してみる</a>
 </div>
+```
 
-  </section>
+\</section\>
 
+\<section class="section"\>
+\<div class="container"\>
+\<h2 class="section-title-center"\>体験〜入会までの流れ\</h2\>
+\<p class="section-lead"\>
+ご不安をできるだけ少なくした状態でスタートしていただくために、<br>
+X BODY Labo 府中店では、体験前後のご説明とカウンセリングを大切にしています。
+\</p\>
+\<div class="steps"\>
+\<div class="step-item"\>
+\<div class="step-label"\>STEP 1\</div\>
+\<div class="step-title"\>LINEで予約・相談\</div\>
+\<div class="step-desc"\>
+まずはLINEにて「体験希望」「質問」など簡単にメッセージをお送りください。<br>
+ご希望の日時やご不安な点なども合わせてお知らせいただけます。
+\</div\>
+\</div\>
+\<div class="step-item"\>
+\<div class="step-label"\>STEP 2\</div\>
+\<div class="step-title"\>カウンセリング\</div\>
+\<div class="step-desc"\>
+当日は、現在の体調や運動経験、気になる部位、目標などをお伺いします。<br>
+EMSが初めての方でも、仕組みから丁寧にご説明します。
+\</div\>
+\</div\>
+\<div class="step-item"\>
+\<div class="step-label"\>STEP 3\</div\>
+\<div class="step-title"\>体験トレーニング（約20分）\</div\>
+\<div class="step-desc"\>
+専用スーツを着用し、全身EMSトレーニングを体験いただきます。<br>
+強度はその場でトレーナーが細かく調整しますのでご安心ください。
+\</div\>
+\</div\>
+\<div class="step-item"\>
+\<div class="step-label"\>STEP 4\</div\>
+\<div class="step-title"\>振り返り・プランのご提案\</div\>
+\<div class="step-desc"\>
+体験後、感じたことやご希望を伺いながら、通い方の目安やプランをご提案します。<br>
+ご納得いただいたうえで、続けるかどうかをお決めいただけます。
+\</div\>
+\</div\>
+\<div class="step-item"\>
+\<div class="step-label"\>STEP 5\</div\>
+\<div class="step-title"\>ご希望の方のみご入会\</div\>
+\<div class="step-desc"\>
+その場で無理に勧誘することはありません。<br>
+一度持ち帰ってじっくり検討いただくことも可能です。
+\</div\>
+\</div\>
+\</div\>
+\<a href="[https://lin.ee/p3oSjwk](https://lin.ee/p3oSjwk)" class="btn btn-primary btn-block" target="\_blank" rel="noopener noreferrer"\>まずはLINEで簡単予約する\</a\>
+\</div\>
+\</section\>
 
-  <!-- ================= FAQ ================= -->
+\<section class="section section--light" id="voices"\>
+\<div class="container"\>
+\<h2 class="section-title-center"\>お客様の声・Before \&amp; After\</h2\>
+\<p class="section-lead"\>
+実際にX BODYを続けている方からいただいた声の一部をご紹介します。<br>
+※内容はイメージしやすいように要約した例です。
+\</p\>
+\<div class="voices"\>
+\<div class="voice-item"\>
+\<div class="voice-meta"\>30代女性／デスクワーク\</div\>
+\<div class="voice-text"\>
+「運動が苦手でジムも続かなかったのですが、20分で終わるのと、<br>
+トレーナーさんが全部メニューを考えてくれるので通いやすいです。<br>
+2〜3週間でズボンのウエストにゆとりが出てきて驚きました。」
+\</div\>
+\</div\>
+\<div class="voice-item"\>
+\<div class="voice-meta"\>40代男性／営業職\</div\>
+\<div class="voice-text"\>
+「出張や残業も多く、普通のジムは続きませんでした。<br>
+ここは仕事帰りにサクッと寄れて、しっかり追い込めるので効率がいいです。<br>
+体幹が安定して、腰の重だるさも軽くなった気がします。」
+\</div\>
+\</div\>
+\<div class="voice-item"\>
+\<div class="voice-meta"\>50代女性／主婦\</div\>
+\<div class="voice-text"\>
+「膝や腰が心配で激しい運動は避けていましたが、<br>
+重りを使わないと聞いて思い切って体験しました。<br>
+無理のない範囲で調整してもらえるので、安心して続けられています。」
+\</div\>
+\</div\>
+\</div\>
 
+\<div class="card" style="margin-bottom:20px;"\>
+\<h3\>Before \&amp; After（イメージ）\</h3\>
+\<div class="ba-grid"\>
+\<div class="ba-box"\>
+BEFORE<br>
+（お腹まわり・姿勢・肩こりなど）<br>
+写真挿入イメージ
+\</div\>
+\<div class="ba-box"\>
+AFTER<br>
+（ウエストの変化・姿勢改善など）<br>
+写真挿入イメージ
+\</div\>
+\</div\>
+\<p class="subnote"\>
+※実際のBefore/After写真を掲載する場合は、お客様からの許可をいただいたうえで差し替えとなります。
+\</p\>
+\</div\>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title-center">よくあるご質問</h2>
-      <p class="section-lead">
-        EMSトレーニングが初めての方からよくいただくご質問をまとめました。<br>
-        ここにない疑問は、LINEからお気軽にお尋ねください。
-      </p>
-      <div class="card">
-        <div class="faq-item">
-          <div class="faq-q">Q. EMSは痛くないですか？</div>
-          <div class="faq-a">
-            A. 個人差はありますが、一般的には「ビリビリ」というよりも、<br>
-            「グッと筋肉が収縮している感覚」に近い刺激です。<br>
-            強さはトレーナーが細かく調整しますので、「強すぎる」と感じる前にすぐにお伝えください。
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Q. どのくらいの頻度で通えばいいですか？</div>
-          <div class="faq-a">
-            A. 目安としては<strong>週1〜2回</strong>をおすすめしています。<br>
-            筋肉の回復時間も考慮しつつ、無理のないペースで続けていくことが大切です。
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Q. 運動経験がなくても大丈夫ですか？</div>
-          <div class="faq-a">
-            A. 問題ありません。<br>
-            これまで運動習慣がなかった方や、ジム初心者の方にも多くご利用いただいています。<br>
-            体力や体調に合わせて、無理のない強度からスタートしますのでご安心ください。
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Q. 手ぶらで通えますか？</div>
-          <div class="faq-a">
-            A. 基本的には手ぶらで通いやすいように準備を整えています。<br>
-            詳細なご用意物（ウェア・タオル・お飲み物など）は、LINEにて最新のご案内をお送りいたします。
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Q. 肩こりや腰痛がある場合でもトレーニングできますか？</div>
-          <div class="faq-a">
-            A. 状態によってはトレーニング内容を工夫することで、<br>
-            筋肉や血流へのアプローチを通じて、肩こり・腰痛のケアを目指すことも可能です。<br>
-            ただし、痛みの程度や原因によっては、先に医療機関での確認をお願いする場合があります。
-          </div>
-        </div>
-      </div>
-      <p class="subnote" style="margin-top:10px;">
-        その他、ご不明点やご不安なことがあれば、お一人おひとりの状況に合わせてご回答します。
-      </p>
-      <a href="https://lin.ee/p3oSjwk" class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer">ここにない質問をLINEで相談してみる</a>
+\<a href="[https://lin.ee/p3oSjwk](https://lin.ee/p3oSjwk)" class="btn btn-outline btn-block" target="\_blank" rel="noopener noreferrer"\>自分も変われるか、LINEで相談してみる\</a\>
+
+\</div\>
+
+\</section\>
+
+\<section class="section"\>
+\<div class="container"\>
+\<h2 class="section-title-center"\>よくあるご質問\</h2\>
+\<p class="section-lead"\>
+EMSトレーニングが初めての方からよくいただくご質問をまとめました。<br>
+ここにない疑問は、LINEからお気軽にお尋ねください。
+\</p\>
+\<div class="card"\>
+\<div class="faq-item"\>
+\<div class="faq-q"\>Q. EMSは痛くないですか？\</div\>
+\<div class="faq-a"\>
+A. 個人差はありますが、一般的には「ビリビリ」というよりも、<br>
+「グッと筋肉が収縮している感覚」に近い刺激です。<br>
+強さはトレーナーが細かく調整しますので、「強すぎる」と感じる前にすぐにお伝えください。
+\</div\>
+\</div\>
+\<div class="faq-item"\>
+\<div class="faq-q"\>Q. どのくらいの頻度で通えばいいですか？\</div\>
+\<div class="faq-a"\>
+A. 目安としては\<strong\>週1〜2回\</strong\>をおすすめしています。<br>
+筋肉の回復時間も考慮しつつ、無理のないペースで続けていくことが大切です。
+\</div\>
+\</div\>
+\<div class="faq-item"\>
+\<div class="faq-q"\>Q. 運動経験がなくても大丈夫ですか？\</div\>
+\<div class="faq-a"\>
+A. 問題ありません。<br>
+これまで運動習慣がなかった方や、ジム初心者の方にも多くご利用いただいています。<br>
+体力や体調に合わせて、無理のない強度からスタートしますのでご安心ください。
+\</div\>
+\</div\>
+\<div class="faq-item"\>
+\<div class="faq-q"\>Q. 手ぶらで通えますか？\</div\>
+\<div class="faq-a"\>
+A. 基本的には手ぶらで通いやすいように準備を整えています。<br>
+詳細なご用意物（ウェア・タオル・お飲み物など）は、LINEにて最新のご案内をお送りいたします。
+\</div\>
+\</div\>
+\<div class="faq-item"\>
+\<div class="faq-q"\>Q. 肩こりや腰痛がある場合でもトレーニングできますか？\</div\>
+\<div class="faq-a"\>
+A. 状態によってはトレーニング内容を工夫することで、<br>
+筋肉や血流へのアプローチを通じて、肩こり・腰痛のケアを目指すことも可能です。<br>
+ただし、痛みの程度や原因によっては、先に医療機関での確認をお願いする場合があります。
+\</div\>
+\</div\>
+\</div\>
+\<p class="subnote" style="margin-top:10px;"\>
+その他、ご不明点やご不安なことがあれば、お一人おひとりの状況に合わせてご回答します。
+\</p\>
+\<a href="[https://lin.ee/p3oSjwk](https://lin.ee/p3oSjwk)" class="btn btn-primary btn-block" target="\_blank" rel="noopener noreferrer"\>ここにない質問をLINEで相談してみる\</a\>
+\</div\>
+\</section\>
+
+\<section class="section section--light" id="access"\>
+\<div class="container"\>
+\<h2 class="section-title-center"\>店舗情報・アクセス\</h2\>
+\<div class="access-grid"\>
+\<div class="card"\>
+\<h3\>エックスボディラボ（X Body Labo）府中店\</h3\>
+\<p\>
+\<strong\>住所：\</strong\><br>
+〒183-0055<br>
+東京都府中市中町2-8-2 ローゼンハイム1F
+\</p\>
+\<p\>
+\<strong\>アクセス：\</strong\><br>
+東京都府中市エリア／府中駅から徒歩圏内。<br>
+詳しい道順は、LINEからお尋ねいただければご案内いたします。
+\</p\>
+\<p\>
+\<strong\>営業時間（目安）：\</strong\><br>
+9:30〜21:30<br>
+※曜日や祝日によって変動する場合があります。
+\</p\>
+\<p class="subnote"\>
+体験・ご予約の最終受付時間など、詳細はLINEよりお気軽にお問い合わせください。
+\</p\>
+\<a href="[https://lin.ee/p3oSjwk](https://lin.ee/p3oSjwk)" class="btn btn-outline btn-block btn-sm" target="\_blank" rel="noopener noreferrer"\>道に迷いそうなときはLINEで聞く\</a\>
+\</div\>
+
+```
+    <div class="facility-box">
+      <img src="[https://i.postimg.cc/yNsQckt6/IMG-1643.jpg](https://i.postimg.cc/yNsQckt6/IMG-1643.jpg)" alt="X BODY Labo 府中店 施設写真" loading="lazy">
     </div>
-  </section>
 
-
-  <!-- ================= アクセス ================= -->
-
-
-  <section class="section section--light" id="access">
-    <div class="container">
-      <h2 class="section-title-center">店舗情報・アクセス</h2>
-      <div class="access-grid">
-        <div class="card">
-          <h3>エックスボディラボ（X Body Labo）府中店</h3>
-          <p>
-            <strong>住所：</strong><br>
-            〒183-0055<br>
-            東京都府中市中町2-8-2 ローゼンハイム1F
-          </p>
-          <p>
-            <strong>アクセス：</strong><br>
-            東京都府中市エリア／府中駅から徒歩圏内。<br>
-            詳しい道順は、LINEからお尋ねいただければご案内いたします。
-          </p>
-          <p>
-            <strong>営業時間（目安）：</strong><br>
-            9:30〜21:30<br>
-            ※曜日や祝日によって変動する場合があります。
-          </p>
-          <p class="subnote">
-            体験・ご予約の最終受付時間など、詳細はLINEよりお気軽にお問い合わせください。
-          </p>
-          <a href="https://lin.ee/p3oSjwk" class="btn btn-outline btn-block btn-sm" target="_blank" rel="noopener noreferrer">道に迷いそうなときはLINEで聞く</a>
-        </div>
-        <div class="map-dummy">
-          ここにGoogleマップ埋め込みが入ります（ダミー領域）
-        </div>
-      </div>
+    <div class="map-dummy">
+      ここにGoogleマップ埋め込みが入ります（ダミー領域）
     </div>
-  </section>
+  </div>
+</div>
+```
 
+\</section\>
 
-  <!-- ================= Footer ================= -->
+\<footer\>
+\<div class="container"\>
+\<div class="footer-top"\>
+\<div\>
+\<div class="footer-logo"\>X BODY Labo 府中店\</div\>
+\<div\>
+〒183-0055 東京都府中市中町2-8-2 ローゼンハイム1F<br>
+営業時間（目安）：9:30〜21:30
+\</div\>
+\<div style="margin-top:8px; font-size:12px; color:\#cccccc;"\>
+忙しいあなたのための、20分専用ジム。<br>
+全身EMSで、時間を味方につけるボディメイクを。
+\</div\>
+\</div\>
+\<div\>
+\<h3 style="font-size:14px; margin-bottom:8px;"\>メニュー\</h3\>
+\<div\>\<a href="\#for-beginner" class="footer-link"\>初めての方へ\</a\>\</div\>
+\<div\>\<a href="\#about-xbody" class="footer-link"\>X BODYとは\</a\>\</div\>
+\<div\>\<a href="\#course" class="footer-link"\>コース・料金\</a\>\</div\>
+\<div\>\<a href="\#voices" class="footer-link"\>お客様の声\</a\>\</div\>
+\<div\>\<a href="\#access" class="footer-link"\>アクセス\</a\>\</div\>
+\</div\>
+\<div\>
+\<h3 style="font-size:14px; margin-bottom:8px;"\>公式アカウント\</h3\>
+\<div\>
+\<a href="[https://www.instagram.com/xbody\_fuchu/](https://www.instagram.com/xbody_fuchu/)" class="footer-link" target="\_blank" rel="noopener noreferrer"\>Instagram（X BODY Labo 府中店）\</a\>
+\</div\>
+\<div style="margin-top:8px;"\>
+\<a href="[https://lin.ee/p3oSjwk](https://lin.ee/p3oSjwk)" class="btn btn-primary btn-sm btn-block" target="\_blank" rel="noopener noreferrer"\>LINEから体験予約・相談する\</a\>
+\</div\>
+\</div\>
+\</div\>
+\<div class="footer-bottom"\>
+\<div class="footer-cta-text"\>
+LINEから24時間受付中：\<a href="[https://lin.ee/p3oSjwk](https://lin.ee/p3oSjwk)" class="footer-link" target="\_blank" rel="noopener noreferrer"\>[https://lin.ee/p3oSjwk](https://lin.ee/p3oSjwk)\</a\>
+\</div\>
+\<div style="font-size:11px;"\>
+\&copy; X BODY Labo Fuchu. All rights reserved.
+\</div\>
+\</div\>
+\</div\>
+\</footer\>
 
-
-  <footer>
-    <div class="container">
-      <div class="footer-top">
-        <div>
-          <div class="footer-logo">X BODY Labo 府中店</div>
-          <div>
-            〒183-0055 東京都府中市中町2-8-2 ローゼンハイム1F<br>
-            営業時間（目安）：9:30〜21:30
-          </div>
-          <div style="margin-top:8px; font-size:12px; color:#cccccc;">
-            忙しいあなたのための、20分専用ジム。<br>
-            全身EMSで、時間を味方につけるボディメイクを。
-          </div>
-        </div>
-        <div>
-          <h3 style="font-size:14px; margin-bottom:8px;">メニュー</h3>
-          <div><a href="#for-beginner" class="footer-link">初めての方へ</a></div>
-          <div><a href="#about-xbody" class="footer-link">X BODYとは</a></div>
-          <div><a href="#course" class="footer-link">コース・料金</a></div>
-          <div><a href="#voices" class="footer-link">お客様の声</a></div>
-          <div><a href="#access" class="footer-link">アクセス</a></div>
-        </div>
-        <div>
-          <h3 style="font-size:14px; margin-bottom:8px;">公式アカウント</h3>
-          <div>
-            <a href="https://www.instagram.com/xbody_fuchu/" class="footer-link" target="_blank" rel="noopener noreferrer">Instagram（X BODY Labo 府中店）</a>
-          </div>
-          <div style="margin-top:8px;">
-            <a href="https://lin.ee/p3oSjwk" class="btn btn-primary btn-sm btn-block" target="_blank" rel="noopener noreferrer">LINEから体験予約・相談する</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="footer-cta-text">
-          LINEから24時間受付中：<a href="https://lin.ee/p3oSjwk" class="footer-link" target="_blank" rel="noopener noreferrer">https://lin.ee/p3oSjwk</a>
-        </div>
-        <div style="font-size:11px;">
-          &copy; X BODY Labo Fuchu. All rights reserved.
-        </div>
-      </div>
-    </div>
-  </footer>
-
-
-</body>
-</html>
+\</body\>
+\</html\>
