@@ -165,7 +165,6 @@
       color: var(--text-main);
     }
 
-    /* 3-1 修正：ロゴ画像用クラス */
     .logo-img {
       height: 32px;
       width: auto;
@@ -335,6 +334,12 @@
       gap: 20px;
     }
 
+    .grid-three {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
     .card {
       border-radius: 16px;
       border: 1px solid var(--border-light);
@@ -345,6 +350,11 @@
     .card--soft {
       background-color: #fffafa;
       border-color: #ffe0e0;
+    }
+
+    .card--accent {
+      border-top: 4px solid var(--primary);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     .badge-pill {
@@ -399,45 +409,84 @@
       color: var(--text-sub);
     }
 
-    /* 3-2 追加：料金表画像 */
-    .price-images {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
+    /* Price Section */
+    .price-image-container {
       margin-top: 24px;
-    }
-    .price-image-item {
-      margin: 0;
-    }
-    .price-image-item img {
+      margin-bottom: 16px;
       width: 100%;
+    }
+    .price-image-container img {
+      width: 100%;
+      height: auto;
       border-radius: 8px;
       border: 1px solid var(--border-light);
+      display: block;
+      margin: 0 auto;
     }
-    .price-image-item figcaption {
-      font-size: 12px;
+    .price-desc {
+      font-size: 13px;
       color: var(--text-sub);
-      text-align: center;
-      margin-top: 4px;
+      background-color: #f9f9f9;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 20px;
     }
 
-    /* 3-3 追加：トレーニング風景ギャラリー */
-    .gallery-grid {
+    /* Stats Grid (Expected Changes) */
+    .change-stats {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-bottom: 32px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 24px;
     }
-    .gallery-item img {
+    .stat-item {
+      background-color: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 12px 8px;
+      text-align: center;
+    }
+    .stat-val {
+      display: block;
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      display: block;
+      font-size: 11px;
+      color: var(--text-sub);
+      line-height: 1.3;
+    }
+
+    /* Horizontal Scroll / Carousel (Common) */
+    .scroll-x-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 16px;
+      padding-bottom: 16px; /* space for scrollbar */
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .scroll-x-item {
+      flex: 0 0 80%; /* Mobile width */
+      scroll-snap-align: center;
+    }
+
+    /* Training Scenes */
+    .training-item figure {
+      margin: 0;
+    }
+    .training-item img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
       aspect-ratio: 4/3;
+      object-fit: cover;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
 
-    /* 3-4 追加：トレーナー紹介 */
+    /* Trainers */
     .trainer-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -503,69 +552,58 @@
       color: var(--text-sub);
     }
 
-    /* FAQ */
+    /* FAQ Accordion */
     .faq-item {
       border-bottom: 1px solid var(--border-light);
-      padding: 12px 0;
     }
-
+    .faq-item:last-child {
+      border-bottom: none;
+    }
     .faq-q {
       font-weight: 600;
-      margin-bottom: 4px;
+      padding: 16px 0;
+      cursor: pointer;
+      list-style: none; /* Hide default triangle */
+      position: relative;
+      padding-right: 24px;
     }
-
+    .faq-q::-webkit-details-marker {
+      display: none;
+    }
+    .faq-q::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: var(--primary);
+      font-weight: 400;
+    }
+    details[open] .faq-q::after {
+      content: "-";
+    }
     .faq-a {
       font-size: 14px;
       color: var(--text-sub);
+      padding-bottom: 16px;
+      line-height: 1.6;
     }
 
-    /* Voice */
-    .voices {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-
+    /* Voices (Carousel style) */
     .voice-item {
       border-radius: 12px;
       border: 1px solid var(--border-light);
-      padding: 14px 14px 12px;
+      padding: 16px;
       background-color: #ffffff;
       font-size: 14px;
+      height: 100%; /* Alignment */
     }
-
     .voice-meta {
       font-size: 12px;
-      color: var(--text-sub);
-      margin-bottom: 4px;
-    }
-
-    .voice-text {
-      font-size: 14px;
-    }
-
-    /* Before/After dummy layout */
-    .ba-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      font-size: 12px;
-      color: var(--text-sub);
-    }
-
-    .ba-box {
-      border-radius: 10px;
-      border: 1px dashed #dddddd;
-      padding: 16px 10px;
-      text-align: center;
-      background: repeating-linear-gradient(
-        45deg,
-        #fafafa,
-        #fafafa 5px,
-        #f2f2f2 5px,
-        #f2f2f2 10px
-      );
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
     }
 
     /* Access */
@@ -574,32 +612,25 @@
       grid-template-columns: 1fr;
       gap: 20px;
     }
-
-    /* 3-5 追加：施設写真 */
-    .facility-box img {
+    .access-photo img {
       width: 100%;
-      height: 220px; /* Mapの高さに合わせる */
-      object-fit: cover;
+      height: auto;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      margin-bottom: 8px;
     }
-
-    .map-dummy {
+    .map-container {
+      width: 100%;
+      position: relative;
       border-radius: 12px;
-      background: repeating-linear-gradient(
-        45deg,
-        #f5f5f5,
-        #f5f5f5 5px,
-        #eeeeee 5px,
-        #eeeeee 10px
-      );
-      height: 220px;
+      overflow: hidden;
       border: 1px solid var(--border-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      color: var(--text-sub);
+      background-color: #eeeeee;
+    }
+    .map-container iframe {
+      display: block;
+      width: 100%;
+      height: 300px;
     }
 
     /* Footer */
@@ -683,18 +714,22 @@
       .grid-two {
         grid-template-columns: 1.1fr 1fr;
       }
-
-      /* 3-2 PC対応 */
-      .price-images {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      /* 3-3 PC対応 */
-      .gallery-grid {
+      
+      .grid-three {
         grid-template-columns: repeat(3, 1fr);
       }
 
-      /* 3-4 PC対応 */
+      /* Price PC */
+      .price-image-container img {
+        max-width: 600px;
+      }
+
+      /* Scroll items PC width */
+      .scroll-x-item {
+        flex: 0 0 32%;
+      }
+
+      /* Trainers PC */
       .trainer-grid {
         grid-template-columns: 1fr 1fr;
       }
@@ -703,13 +738,16 @@
         grid-template-columns: repeat(3, 1fr);
       }
 
-      .voices {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      /* 3-5 PC対応（3カラム：情報/写真/地図） */
+      /* Access PC */
       .access-grid {
-        grid-template-columns: 1.2fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+      }
+      .access-content {
+        order: 1;
+      }
+      .access-map-area {
+        order: 2;
       }
 
       .footer-top {
@@ -721,10 +759,12 @@
       .header-inner {
         gap: 10px;
       }
-
       .header-cta {
         display: block;
       }
+      /* Ensure stats don't break on very small screens */
+      .stat-val { font-size: 14px; }
+      .stat-label { font-size: 10px; }
     }
 
   </style>
@@ -735,7 +775,7 @@
   <header>
     <div class="container header-inner">
       <div class="logo">
-        <img src="https://i.postimg.cc/wjKbxWkk/IMG-1649.jpg" alt="X BODY Labo ロゴ" class="logo-img">
+        <img src="https://i.postimg.cc/wjKbxWkk/IMG-1649.jpg" alt="X BODY Labo ロゴ" class="logo-img" loading="lazy">
         <span>X BODY Labo 府中店</span>
       </div>
       <nav>
@@ -908,30 +948,51 @@
         週1〜2回のX BODYトレーニングにより、<br>
         基礎代謝の向上や体脂肪燃焼、2〜3週間での身体の変化を目指します。
       </p>
-      <div class="grid-two">
-        <div class="card">
-          <h3>ボディメイク・パフォーマンス面</h3>
-          <ul class="list-check">
-            <li>基礎代謝が上がりやすくなり、日常的にエネルギーを消費しやすい体へ</li>
-            <li>体脂肪燃焼を促し、体型・シルエットの変化を目指せる</li>
-            <li>二の腕・お腹・お尻・ふくらはぎなど、全身24カ所へ効率よくアプローチ</li>
-            <li>体幹の強化により、姿勢の安定・動きやすさの向上をサポート</li>
-            <li>筋肉量の増加を通じて、日常生活での動作が軽く感じられやすくなる</li>
-          </ul>
-          <p class="subnote">
-            ※感じ方には個人差がありますが、多くの方が2〜3週間ほどで「変化のきっかけ」を実感し始めています。
-          </p>
+      
+      <div class="change-stats">
+        <div class="stat-item">
+          <span class="stat-val">週1〜2回</span>
+          <span class="stat-label">無理なく続く</span>
         </div>
-        <div class="card">
-          <h3>コンディション・体質面</h3>
-          <ul class="list-check">
-            <li>筋肉をしなやかに保ちつつ、血流改善をサポート</li>
-            <li>肩まわり・腰まわりへのアプローチにより、肩こり・腰痛のケアにも役立ちやすい</li>
-            <li>体内酵素や内分泌成分の活性化を通じて、糖・脂肪代謝機能の改善を目指す</li>
-            <li>「太りにくい体質」へのステップとしても活用しやすいトレーニング</li>
-          </ul>
-          <a href="https://lin.ee/p3oSjwk" class="btn btn-outline btn-block btn-sm" target="_blank" rel="noopener noreferrer">どんな効果が期待できるかLINEで聞いてみる</a>
+        <div class="stat-item">
+          <span class="stat-val">約20分</span>
+          <span class="stat-label">高効率時短</span>
         </div>
+        <div class="stat-item">
+          <span class="stat-val">2〜3週間</span>
+          <span class="stat-label">変化の目安</span>
+        </div>
+      </div>
+
+      <div class="grid-three">
+        <div class="card card--accent">
+          <h3>ボディライン・ダイエット</h3>
+          <ul class="list-check">
+            <li>基礎代謝UPで痩せやすい体へ</li>
+            <li>体脂肪燃焼・引き締め</li>
+            <li>二の腕・お腹・お尻など全身24カ所へアプローチ</li>
+          </ul>
+        </div>
+        <div class="card card--accent">
+          <h3>パフォーマンス・体幹</h3>
+          <ul class="list-check">
+            <li>体幹強化で姿勢が安定</li>
+            <li>筋肉量増加で動きやすく</li>
+            <li>日常生活の動作改善</li>
+          </ul>
+        </div>
+        <div class="card card--accent">
+          <h3>コンディション・健康</h3>
+          <ul class="list-check">
+            <li>血流改善・筋肉の柔軟性</li>
+            <li>肩こり・腰痛のケア</li>
+            <li>体内酵素の活性化・体質改善</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div style="margin-top:24px;">
+        <a href="https://lin.ee/p3oSjwk" class="btn btn-outline btn-block" target="_blank" rel="noopener noreferrer">どんな変化が見込めるかLINEで相談する</a>
       </div>
     </div>
   </section>
@@ -941,23 +1002,33 @@
     <div class="container">
       <h2 class="section-title-center">トレーニング風景</h2>
       <p class="section-lead">
-        スタジオの雰囲気や、実際のトレーニングの様子がイメージしやすいよう、写真の一部をご紹介します。
+        スタジオの雰囲気や、実際のトレーニングの様子がイメージしやすいよう、一部の写真をご紹介します。
       </p>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="https://i.postimg.cc/Dz6Cg73b/IMG-1626.jpg" alt="トレーニング風景1" loading="lazy">
+      <div class="scroll-x-container training-gallery">
+        <div class="scroll-x-item training-item">
+          <figure>
+            <img src="https://i.postimg.cc/Dz6Cg73b/IMG-1626.jpg" alt="トレーニング風景1" loading="lazy">
+          </figure>
         </div>
-        <div class="gallery-item">
-          <img src="https://i.postimg.cc/FKNW378h/IMG-1642.jpg" alt="トレーニング風景2" loading="lazy">
+        <div class="scroll-x-item training-item">
+          <figure>
+            <img src="https://i.postimg.cc/FKNW378h/IMG-1642.jpg" alt="トレーニング風景2" loading="lazy">
+          </figure>
         </div>
-        <div class="gallery-item">
-          <img src="https://i.postimg.cc/hGcyTf6T/IMG-1645.jpg" alt="トレーニング風景3" loading="lazy">
+        <div class="scroll-x-item training-item">
+          <figure>
+            <img src="https://i.postimg.cc/hGcyTf6T/IMG-1645.jpg" alt="トレーニング風景3" loading="lazy">
+          </figure>
         </div>
-        <div class="gallery-item">
-          <img src="https://i.postimg.cc/VNmGndpC/IMG-1647.jpg" alt="トレーニング風景4" loading="lazy">
+        <div class="scroll-x-item training-item">
+          <figure>
+            <img src="https://i.postimg.cc/VNmGndpC/IMG-1647.jpg" alt="トレーニング風景4" loading="lazy">
+          </figure>
         </div>
-        <div class="gallery-item">
-          <img src="https://i.postimg.cc/PqT3YP9v/IMG-1648.jpg" alt="トレーニング風景5" loading="lazy">
+        <div class="scroll-x-item training-item">
+          <figure>
+            <img src="https://i.postimg.cc/PqT3YP9v/IMG-1648.jpg" alt="トレーニング風景5" loading="lazy">
+          </figure>
         </div>
       </div>
       <a href="https://lin.ee/p3oSjwk" class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer">
@@ -1080,15 +1151,11 @@
             </tr>
           </table>
           
-          <div class="price-images">
-            <figure class="price-image-item">
-              <img src="https://i.postimg.cc/9fC8ZrKz/IMG-1623.jpg" alt="トレーニングメニュー料金表1" loading="lazy">
-              <figcaption>トレーニングメニュー料金表1</figcaption>
-            </figure>
-            <figure class="price-image-item">
-              <img src="https://i.postimg.cc/SKkTCJ3R/IMG-1625.jpg" alt="トレーニングメニュー料金表2" loading="lazy">
-              <figcaption>トレーニングメニュー料金表2</figcaption>
-            </figure>
+          <div class="price-image-container">
+            <img src="https://i.postimg.cc/9fC8ZrKz/IMG-1623.jpg" alt="トレーニングメニュー料金表" loading="lazy">
+          </div>
+          <div class="price-desc">
+            目的やライフスタイルに合わせて、複数のトレーニングメニューをご用意しています。回数や料金の詳細は、上の料金表をご確認ください。
           </div>
 
           <p class="subnote" style="margin-top:16px;">
@@ -1174,61 +1241,46 @@
 
   <section class="section section--light" id="voices">
     <div class="container">
-      <h2 class="section-title-center">お客様の声・Before &amp; After</h2>
+      <h2 class="section-title-center">お客様の声</h2>
       <p class="section-lead">
         実際にX BODYを続けている方からいただいた声の一部をご紹介します。<br>
         ※内容はイメージしやすいように要約した例です。
       </p>
-      <div class="voices">
-        <div class="voice-item">
-          <div class="voice-meta">30代女性／デスクワーク</div>
-          <div class="voice-text">
-            「運動が苦手でジムも続かなかったのですが、20分で終わるのと、<br>
-            トレーナーさんが全部メニューを考えてくれるので通いやすいです。<br>
-            2〜3週間でズボンのウエストにゆとりが出てきて驚きました。」
+      <div class="scroll-x-container voices">
+        <div class="scroll-x-item">
+          <div class="voice-item">
+            <div class="voice-meta">30代女性／デスクワーク</div>
+            <div class="voice-text">
+              「運動が苦手でジムも続かなかったのですが、20分で終わるのと、<br>
+              トレーナーさんが全部メニューを考えてくれるので通いやすいです。<br>
+              2〜3週間でズボンのウエストにゆとりが出てきて驚きました。」
+            </div>
           </div>
         </div>
-        <div class="voice-item">
-          <div class="voice-meta">40代男性／営業職</div>
-          <div class="voice-text">
-            「出張や残業も多く、普通のジムは続きませんでした。<br>
-            ここは仕事帰りにサクッと寄れて、しっかり追い込めるので効率がいいです。<br>
-            体幹が安定して、腰の重だるさも軽くなった気がします。」
+        <div class="scroll-x-item">
+          <div class="voice-item">
+            <div class="voice-meta">40代男性／営業職</div>
+            <div class="voice-text">
+              「出張や残業も多く、普通のジムは続きませんでした。<br>
+              ここは仕事帰りにサクッと寄れて、しっかり追い込めるので効率がいいです。<br>
+              体幹が安定して、腰の重だるさも軽くなった気がします。」
+            </div>
           </div>
         </div>
-        <div class="voice-item">
-          <div class="voice-meta">50代女性／主婦</div>
-          <div class="voice-text">
-            「膝や腰が心配で激しい運動は避けていましたが、<br>
-            重りを使わないと聞いて思い切って体験しました。<br>
-            無理のない範囲で調整してもらえるので、安心して続けられています。」
+        <div class="scroll-x-item">
+          <div class="voice-item">
+            <div class="voice-meta">50代女性／主婦</div>
+            <div class="voice-text">
+              「膝や腰が心配で激しい運動は避けていましたが、<br>
+              重りを使わないと聞いて思い切って体験しました。<br>
+              無理のない範囲で調整してもらえるので、安心して続けられています。」
+            </div>
           </div>
         </div>
       </div>
 
-
-  <div class="card" style="margin-bottom:20px;">
-    <h3>Before &amp; After（イメージ）</h3>
-    <div class="ba-grid">
-      <div class="ba-box">
-        BEFORE<br>
-        （お腹まわり・姿勢・肩こりなど）<br>
-        写真挿入イメージ
-      </div>
-      <div class="ba-box">
-        AFTER<br>
-        （ウエストの変化・姿勢改善など）<br>
-        写真挿入イメージ
-      </div>
+      <a href="https://lin.ee/p3oSjwk" class="btn btn-outline btn-block" target="_blank" rel="noopener noreferrer">自分も変われるかLINEで相談してみる</a>
     </div>
-    <p class="subnote">
-      ※実際のBefore/After写真を掲載する場合は、お客様からの許可をいただいたうえで差し替えとなります。
-    </p>
-  </div>
-
-  <a href="https://lin.ee/p3oSjwk" class="btn btn-outline btn-block" target="_blank" rel="noopener noreferrer">自分も変われるか、LINEで相談してみる</a>
-</div>
-
   </section>
 
 
@@ -1240,49 +1292,49 @@
         ここにない疑問は、LINEからお気軽にお尋ねください。
       </p>
       <div class="card">
-        <div class="faq-item">
-          <div class="faq-q">Q. EMSは痛くないですか？</div>
+        <details class="faq-item">
+          <summary class="faq-q">Q. EMSは痛くないですか？</summary>
           <div class="faq-a">
             A. 個人差はありますが、一般的には「ビリビリ」というよりも、<br>
             「グッと筋肉が収縮している感覚」に近い刺激です。<br>
             強さはトレーナーが細かく調整しますので、「強すぎる」と感じる前にすぐにお伝えください。
           </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Q. どのくらいの頻度で通えばいいですか？</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Q. どのくらいの頻度で通えばいいですか？</summary>
           <div class="faq-a">
             A. 目安としては<strong>週1〜2回</strong>をおすすめしています。<br>
             筋肉の回復時間も考慮しつつ、無理のないペースで続けていくことが大切です。
           </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Q. 運動経験がなくても大丈夫ですか？</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Q. 運動経験がなくても大丈夫ですか？</summary>
           <div class="faq-a">
             A. 問題ありません。<br>
             これまで運動習慣がなかった方や、ジム初心者の方にも多くご利用いただいています。<br>
             体力や体調に合わせて、無理のない強度からスタートしますのでご安心ください。
           </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Q. 手ぶらで通えますか？</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Q. 手ぶらで通えますか？</summary>
           <div class="faq-a">
             A. 基本的には手ぶらで通いやすいように準備を整えています。<br>
             詳細なご用意物（ウェア・タオル・お飲み物など）は、LINEにて最新のご案内をお送りいたします。
           </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Q. 肩こりや腰痛がある場合でもトレーニングできますか？</div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Q. 肩こりや腰痛がある場合でもトレーニングできますか？</summary>
           <div class="faq-a">
             A. 状態によってはトレーニング内容を工夫することで、<br>
             筋肉や血流へのアプローチを通じて、肩こり・腰痛のケアを目指すことも可能です。<br>
             ただし、痛みの程度や原因によっては、先に医療機関での確認をお願いする場合があります。
           </div>
-        </div>
+        </details>
       </div>
       <p class="subnote" style="margin-top:10px;">
-        その他、ご不明点やご不安なことがあれば、お一人おひとりの状況に合わせてご回答します。
+        ここにない疑問は、LINEでお気軽にご質問ください。
       </p>
-      <a href="https://lin.ee/p3oSjwk" class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer">ここにない質問をLINEで相談してみる</a>
+      <a href="https://lin.ee/p3oSjwk" class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer">LINEで質問してみる</a>
     </div>
   </section>
 
@@ -1291,35 +1343,39 @@
     <div class="container">
       <h2 class="section-title-center">店舗情報・アクセス</h2>
       <div class="access-grid">
-        <div class="card">
-          <h3>エックスボディラボ（X Body Labo）府中店</h3>
-          <p>
-            <strong>住所：</strong><br>
-            〒183-0055<br>
-            東京都府中市中町2-8-2 ローゼンハイム1F
-          </p>
-          <p>
-            <strong>アクセス：</strong><br>
-            東京都府中市エリア／府中駅から徒歩圏内。<br>
-            詳しい道順は、LINEからお尋ねいただければご案内いたします。
-          </p>
-          <p>
-            <strong>営業時間（目安）：</strong><br>
-            9:30〜21:30<br>
-            ※曜日や祝日によって変動する場合があります。
-          </p>
-          <p class="subnote">
-            体験・ご予約の最終受付時間など、詳細はLINEよりお気軽にお問い合わせください。
-          </p>
-          <a href="https://lin.ee/p3oSjwk" class="btn btn-outline btn-block btn-sm" target="_blank" rel="noopener noreferrer">道に迷いそうなときはLINEで聞く</a>
-        </div>
         
-        <div class="facility-box">
-          <img src="https://i.postimg.cc/yNsQckt6/IMG-1643.jpg" alt="X BODY Labo 府中店 施設写真" loading="lazy">
+        <div class="access-content">
+          <div class="access-photo">
+            <img src="https://i.postimg.cc/yNsQckt6/IMG-1643.jpg" alt="X BODY Labo 府中店 施設写真" loading="lazy">
+          </div>
+          <div class="card">
+            <h3>エックスボディラボ（X Body Labo）府中店</h3>
+            <p>
+              <strong>住所：</strong><br>
+              〒183-0055<br>
+              東京都府中市中町2-8-2 ローゼンハイム1F
+            </p>
+            <p>
+              <strong>アクセス：</strong><br>
+              東京都府中市エリア／府中駅から徒歩圏内。<br>
+              詳しい道順は、LINEからお尋ねいただければご案内いたします。
+            </p>
+            <p>
+              <strong>営業時間（目安）：</strong><br>
+              9:30〜21:30<br>
+              ※曜日や祝日によって変動する場合があります。
+            </p>
+            <p class="subnote">
+              体験・ご予約の最終受付時間など、詳細はLINEよりお気軽にお問い合わせください。
+            </p>
+            <a href="https://lin.ee/p3oSjwk" class="btn btn-outline btn-block btn-sm" target="_blank" rel="noopener noreferrer">道に迷いそうなときはLINEで聞く</a>
+          </div>
         </div>
 
-        <div class="map-dummy">
-          ここにGoogleマップ埋め込みが入ります（ダミー領域）
+        <div class="access-map-area">
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4000.8109730304013!2d139.4809056757873!3d35.67298037258996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e4e34aa94e15%3A0x51d8fdb74d570bce!2z44OR44O844K944OK44Or44K444OgWEJPRFnvvIgg44Ko44OD44Kv44K544Oc44OH44Kj77yJ5bqc5Lit5bqXIDIw5YiGIOeXqeOBm-OCi0VNU-ODiOODrOODvOODi-ODs-OCsA!5e1!3m2!1sja!2sjp!4v1764827335241!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
       </div>
     </div>
