@@ -478,10 +478,12 @@
     .training-item figure {
       margin: 0;
     }
+    
+    /* 修正①：画像が切れないように調整 */
     .training-item img {
       width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
+      height: auto; /* 比率を維持して全表示 */
+      display: block;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
@@ -1046,17 +1048,39 @@
       </p>
       <div class="trainer-grid">
         <div class="trainer-card">
-          <img src="https://i.postimg.cc/KYf9Nmh4/IMG-1628.jpg" alt="トレーナー カイト" class="trainer-img" loading="lazy">
-          <div class="trainer-name">Kaito</div>
+          <img src="https://i.postimg.cc/KYf9Nmh4/IMG-1628.jpg" alt="トレーナー 浅井 凱斗" class="trainer-img" loading="lazy">
+          <div class="trainer-name">浅井 凱斗</div>
           <div class="trainer-text">
-            「運動が苦手」「初めてで不安」という方こそ、ぜひお任せください。丁寧にカウンセリングを行い、無理のないペースで目標達成をサポートします。一緒に楽しく体を変えていきましょう！
+            <p><strong>三重県桑名市出身</strong></p>
+            <ul style="font-size:13px; margin-bottom:12px;">
+              <li>2016-2019 名古屋オーシャンズU18</li>
+              <li>2019-2023 名古屋オーシャンズサテライト</li>
+              <li>2023-2025 立川アスレティックFC</li>
+            </ul>
+            <p style="color:var(--primary); font-weight:700;">元プロフットサル選手<br>筋トレ歴10年🏋️‍♀️</p>
+            <p style="margin-top:10px; font-size:13px;">
+              「運動が苦手」「初めてで不安」という方こそ、ぜひお任せください。丁寧にカウンセリングを行い、無理のないペースで目標達成をサポートします。一緒に楽しく体を変えていきましょう！
+            </p>
           </div>
         </div>
+        
         <div class="trainer-card">
-          <img src="https://i.postimg.cc/Bv4YHXkD/IMG-1629.jpg" alt="トレーナー ラファ" class="trainer-img" loading="lazy">
-          <div class="trainer-name">Rafa</div>
+          <img src="https://i.postimg.cc/Bv4YHXkD/IMG-1629.jpg" alt="トレーナー 山田 ラファエル ユウゴ" class="trainer-img" loading="lazy">
+          <div class="trainer-name">山田 ラファエル ユウゴ</div>
           <div class="trainer-text">
-            効率的なボディメイクから日々の健康維持まで。お客様のライフスタイルに合わせたトレーニングをご提案します。短い時間でもしっかり効果を感じていただけるよう全力を尽くします。
+            <p><strong>ブラジル・サンパウロ出身</strong></p>
+            <ul style="font-size:13px; margin-bottom:12px;">
+              <li>2007-2009 名古屋オーシャンズ</li>
+              <li>2009-2011 デウソン神戸</li>
+              <li>2011-2018 府中アスレティックFC</li>
+              <li>2015 チョンブリブルーウェーブ（タイ）</li>
+              <li>2018 河南建業</li>
+              <li>2018-2020 バサジィ大分</li>
+            </ul>
+            <p style="color:var(--primary); font-weight:700;">元フットサル日本代表<br>筋トレ歴27年🏋🏿</p>
+            <p style="margin-top:10px; font-size:13px;">
+              効率的なボディメイクから日々の健康維持まで。お客様のライフスタイルに合わせたトレーニングをご提案します。短い時間でもしっかり効果を感じていただけるよう全力を尽くします。
+            </p>
           </div>
         </div>
       </div>
@@ -1419,7 +1443,7 @@
           LINEから24時間受付中：<a href="https://lin.ee/p3oSjwk" class="footer-link" target="_blank" rel="noopener noreferrer">https://lin.ee/p3oSjwk</a>
         </div>
         <div style="font-size:11px;">
-          &copy; X BODY Labo Fuchu. All rights reserved.
+          © X BODY Labo Fuchu. All rights reserved.
         </div>
       </div>
     </div>
