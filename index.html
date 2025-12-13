@@ -139,64 +139,6 @@
       text-align: center;
     }
 
-    /* Header */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background-color: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(224, 224, 224, 0.8);
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 16px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--text-main);
-    }
-
-    .logo-img {
-      height: 32px;
-      width: auto;
-    }
-
-    nav {
-      display: none;
-    }
-
-    .nav-list {
-      list-style: none;
-      display: flex;
-      gap: 18px;
-      margin: 0 20px 0 0;
-      padding: 0;
-      font-size: 14px;
-    }
-
-    .nav-link {
-      color: var(--text-sub);
-      font-weight: 500;
-    }
-
-    .nav-link:hover {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    .header-cta {
-      display: none;
-    }
-
     /* Hero */
     .hero {
       padding: 56px 0 40px;
@@ -432,7 +374,7 @@
       margin-bottom: 20px;
     }
 
-    /* Stats Grid (Expected Changes) */
+    /* Stats Grid */
     .change-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -460,17 +402,17 @@
       line-height: 1.3;
     }
 
-    /* Horizontal Scroll / Carousel (Common) */
+    /* Horizontal Scroll / Carousel */
     .scroll-x-container {
       display: flex;
       overflow-x: auto;
       gap: 16px;
-      padding-bottom: 16px; /* space for scrollbar */
+      padding-bottom: 16px;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
     }
     .scroll-x-item {
-      flex: 0 0 80%; /* Mobile width */
+      flex: 0 0 80%;
       scroll-snap-align: center;
     }
 
@@ -478,11 +420,9 @@
     .training-item figure {
       margin: 0;
     }
-    
-    /* 修正①：画像が切れないように調整 */
     .training-item img {
       width: 100%;
-      height: auto; /* 比率を維持して全表示 */
+      height: auto;
       display: block;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
@@ -599,7 +539,7 @@
       padding: 16px;
       background-color: #ffffff;
       font-size: 14px;
-      height: 100%; /* Alignment */
+      height: 100%;
     }
     .voice-meta {
       font-size: 12px;
@@ -676,71 +616,173 @@
       font-size: 13px;
     }
 
-    /* Responsive */
+    /* ==========================================================================
+       ▼▼▼ New Header & Mobile Menu CSS ▼▼▼
+       ========================================================================== */
+    
+    /* ヘッダー全体 */
+    .site-header {
+      background: #ffffff;
+      border-bottom: 1px solid #eee;
+      padding: 8px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .site-header-inner {
+      max-width: 1040px; /* var(--max-width) */
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    /* ロゴ */
+    .header-logo-img {
+      max-height: 32px;
+      height: auto;
+      width: auto;
+      display: block;
+    }
+
+    /* LINEボタン（ヘッダー用） */
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: var(--primary); /* using CSS var */
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .header-cta:hover {
+      background: var(--primary-dark);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    /* ハンバーガーボタン */
+    .menu-toggle {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      z-index: 1001; /* Navの上 */
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: #333;
+      border-radius: 1px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    /* 開いているときの「×」アニメーション */
+    .menu-toggle.is-active span:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+    .menu-toggle.is-active span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.is-active span:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    /* モバイルメニュー本体 */
+    .mobile-nav {
+      position: fixed;
+      inset: 0 0 auto 0; /* 上から全幅 */
+      top: 56px;          /* ヘッダーの高さに合わせて調整 */
+      background: rgba(255,255,255,0.98);
+      border-bottom: 1px solid #eee;
+      transform: translateY(-100%);
+      transition: transform 0.25s ease;
+      z-index: 999;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .mobile-nav.is-open {
+      transform: translateY(0);
+    }
+
+    .mobile-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 16px;
+    }
+
+    .mobile-nav li + li {
+      margin-top: 12px;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 8px 4px;
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: #222;
+      font-weight: 600;
+    }
+    .mobile-nav a:hover {
+      color: var(--primary);
+    }
+
+    /* Responsive Adjustments */
     @media (min-width: 768px) {
       .header-inner {
         padding: 10px 0;
       }
-
-      nav {
-        display: block;
-      }
-
-      .header-cta {
-        display: block;
-      }
-
       .hero-inner {
         flex-direction: row;
         align-items: center;
       }
-
       .hero-main {
         flex: 3;
         padding-right: 24px;
       }
-
       .hero-side {
         flex: 2;
         padding: 20px 18px;
       }
-
       .hero-title {
         font-size: 32px;
       }
-
       .hero-point-list {
         grid-template-columns: 1fr 1fr;
       }
-
       .grid-two {
         grid-template-columns: 1.1fr 1fr;
       }
-      
       .grid-three {
         grid-template-columns: repeat(3, 1fr);
       }
-
-      /* Price PC */
       .price-image-container img {
         max-width: 600px;
       }
-
-      /* Scroll items PC width */
       .scroll-x-item {
         flex: 0 0 32%;
       }
-
-      /* Trainers PC */
       .trainer-grid {
         grid-template-columns: 1fr 1fr;
       }
-
       .steps {
         grid-template-columns: repeat(3, 1fr);
       }
-
-      /* Access PC */
       .access-grid {
         grid-template-columns: 1fr 1fr;
         align-items: start;
@@ -751,18 +793,21 @@
       .access-map-area {
         order: 2;
       }
-
       .footer-top {
         grid-template-columns: 1.6fr 1fr 1fr;
       }
     }
 
-    @media (max-width: 767px) {
-      .header-inner {
-        gap: 10px;
+    @media (max-width: 640px) {
+      .site-header {
+        padding: 6px 10px;
+      }
+      .header-logo-img {
+        max-height: 28px;
       }
       .header-cta {
-        display: block;
+        padding: 6px 12px;
+        font-size: 0.8rem;
       }
       /* Ensure stats don't break on very small screens */
       .stat-val { font-size: 14px; }
@@ -773,26 +818,40 @@
 </head>
 <body>
 
+  <header class="site-header">
+    <div class="site-header-inner">
 
-  <header>
-    <div class="container header-inner">
-      <div class="logo">
-        <img src="https://i.postimg.cc/wjKbxWkk/IMG-1649.jpg" alt="X BODY Labo ロゴ" class="logo-img" loading="lazy">
-        <span>X BODY Labo 府中店</span>
+      <button class="menu-toggle" aria-label="メニューを開閉" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="header-logo">
+        <img src="https://i.postimg.cc/wjKbxWkk/IMG-1649.jpg"
+             alt="X BODY Lab STATION ロゴ"
+             class="header-logo-img">
       </div>
-      <nav>
-        <ul class="nav-list">
-          <li><a href="#for-beginner" class="nav-link">初めての方へ</a></li>
-          <li><a href="#about-xbody" class="nav-link">X BODYとは</a></li>
-          <li><a href="#course" class="nav-link">コース・料金</a></li>
-          <li><a href="#voices" class="nav-link">お客様の声</a></li>
-          <li><a href="#access" class="nav-link">アクセス</a></li>
-        </ul>
-      </nav>
-      <div class="header-cta">
-        <a href="https://lin.ee/p3oSjwk" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">LINEで体験予約する</a>
-      </div>
+
+      <a href="https://lin.ee/p3oSjwk"
+         class="header-cta"
+         target="_blank"
+         rel="noopener noreferrer">
+        LINEで体験予約する
+      </a>
+
     </div>
+
+    <nav id="mobile-nav" class="mobile-nav">
+      <ul>
+        <li><a href="#for-beginner">初めての方へ</a></li>
+        <li><a href="#about-xbody">X BODYとは</a></li>
+        <li><a href="#course">コース・料金</a></li>
+        <li><a href="#voices">お客様の声</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#access">アクセス</a></li>
+      </ul>
+    </nav>
   </header>
 
 
@@ -1308,7 +1367,7 @@
   </section>
 
 
-  <section class="section">
+  <section class="section" id="faq">
     <div class="container">
       <h2 class="section-title-center">よくあるご質問</h2>
       <p class="section-lead">
@@ -1449,6 +1508,33 @@
     </div>
   </footer>
 
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('mobile-nav');
+    if (!toggle || !nav) return;
+
+    const links = nav.querySelectorAll('a');
+
+    function closeNav() {
+      nav.classList.remove('is-open');
+      toggle.classList.remove('is-active');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    toggle.addEventListener('click', function () {
+      const isOpen = nav.classList.toggle('is-open');
+      toggle.classList.toggle('is-active', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    links.forEach(function (link) {
+      link.addEventListener('click', function () {
+        closeNav();
+      });
+    });
+  });
+  </script>
 
 </body>
 </html>
