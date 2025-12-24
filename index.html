@@ -164,10 +164,9 @@
       margin-bottom: 8px;
     }
 
-    /* 修正1：FV用画像スタイル */
     .hero-main-visual {
       width: 100%;
-      max-width: 320px; /* ロゴが見やすいサイズ感 */
+      max-width: 320px;
       height: auto;
       object-fit: contain;
       display: block;
@@ -229,42 +228,6 @@
       color: #ffffff;
       padding: 18px 16px;
       overflow: hidden;
-    }
-
-    .hero-side-tag {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      opacity: 0.7;
-      margin-bottom: 4px;
-    }
-
-    .hero-side-main {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .hero-side-sub {
-      font-size: 13px;
-      opacity: 0.8;
-      margin-bottom: 12px;
-    }
-
-    .hero-side-meta {
-      font-size: 11px;
-      opacity: 0.8;
-    }
-
-    .hero-side-pill {
-      position: absolute;
-      right: -40px;
-      bottom: -40px;
-      width: 120px;
-      height: 120px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #ffffff, #b30000 70%);
-      opacity: 0.18;
     }
 
     /* Cards & layout helpers */
@@ -626,11 +589,7 @@
       font-size: 13px;
     }
 
-    /* ==========================================================================
-       Header & Mobile Menu Custom CSS
-       ========================================================================== */
-    
-    /* ヘッダー全体 */
+    /* Header CSS */
     .site-header {
       background: #ffffff;
       border-bottom: 1px solid #eee;
@@ -649,7 +608,6 @@
       gap: 12px;
     }
 
-    /* ロゴ */
     .header-logo-img {
       max-height: 32px;
       height: auto;
@@ -657,7 +615,6 @@
       display: block;
     }
 
-    /* LINEボタン（ヘッダー用） */
     .header-cta {
       display: inline-flex;
       align-items: center;
@@ -678,12 +635,7 @@
       transform: translateY(-1px);
     }
 
-    /* 修正2: 旧モバイルメニュー関連の非表示 */
-    .menu-toggle, #mobile-nav {
-      display: none !important;
-    }
-
-    /* 修正2: FAB (Floating Action Button) */
+    /* FAB & Bottom Sheet CSS */
     .fab-btn {
       position: fixed;
       bottom: 24px;
@@ -705,7 +657,6 @@
     .fab-btn:active { transform: scale(0.95); }
     .fab-text { font-size: 11px; font-weight: 700; line-height: 1; }
 
-    /* 修正2: Overlay */
     .menu-overlay {
       position: fixed;
       inset: 0;
@@ -717,7 +668,6 @@
     }
     .menu-overlay.is-visible { opacity: 1; visibility: visible; }
 
-    /* 修正2: Bottom Sheet */
     .bottom-sheet {
       position: fixed;
       bottom: 0;
@@ -860,20 +810,8 @@
           スタッフが順次ご返信いたします。
         </p>
       </div>
-      <div class="hero-side">
-        <div class="hero-side-tag">ABOUT STUDIO</div>
-        <div class="hero-side-main">
-          エックスボディラボ（X Body Labo）府中店
-        </div>
-        <div class="hero-side-sub">
-          〒183-0055 東京都府中市中町2-8-2 ローゼンハイム1F<br>
-          府中駅から徒歩圏内の全身EMSパーソナルトレーニングジムです。
-        </div>
-        <div class="hero-side-meta">
-          営業時間（目安）：9:30〜21:30<br>
-          お仕事帰り・スキマ時間にも通いやすいスタジオです。
-        </div>
-        <div class="hero-side-pill"></div>
+      <div class="hero-side" style="padding: 0; background: none; box-shadow: none;">
+        <img src="https://i.postimg.cc/Znzy2gn6/image.png" alt="X BODY Labo イメージ" style="width:100%; height:auto; border-radius:16px; display:block;" loading="lazy">
       </div>
     </div>
   </section>
