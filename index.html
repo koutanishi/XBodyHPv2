@@ -9,10 +9,10 @@
     :root {
       --primary: #d62828;
       --primary-dark: #a71d1d;
-      --bg-light: #f7f7f7;
-      --text-main: #222222;
-      --text-sub: #555555;
-      --border-light: #e0e0e0;
+      --bg-light: #111111; /* 黒系に変更 */
+      --text-main: #ffffff; /* 白に変更 */
+      --text-sub: #bbbbbb; /* 明るめのグレーに変更 */
+      --border-light: #333333; /* 暗いグレーに変更 */
       --max-width: 1040px;
     }
 
@@ -24,7 +24,7 @@
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "YuGothic", "Yu Gothic", "Meiryo", sans-serif;
       color: var(--text-main);
-      background-color: #ffffff;
+      background-color: #000000; /* 全体背景を黒に */
       line-height: 1.7;
       font-size: 16px;
     }
@@ -62,6 +62,7 @@
     h1, h2, h3 {
       margin-top: 0;
       line-height: 1.4;
+      color: #ffffff;
     }
 
     h1 {
@@ -107,24 +108,24 @@
     .btn-primary {
       background-color: var(--primary);
       color: #ffffff;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     }
 
     .btn-primary:hover {
       background-color: var(--primary-dark);
       text-decoration: none;
       transform: translateY(-1px);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
     }
 
     .btn-outline {
-      background-color: #ffffff;
+      background-color: transparent;
       color: var(--primary);
       border: 1px solid var(--primary);
     }
 
     .btn-outline:hover {
-      background-color: #fff5f5;
+      background-color: rgba(214, 40, 40, 0.1);
       text-decoration: none;
     }
 
@@ -142,7 +143,8 @@
     /* Hero */
     .hero {
       padding: 56px 0 40px;
-      background: radial-gradient(circle at top left, #fff5f5 0, #ffffff 40%, #ffffff 100%);
+      /* 黒ベースのグラデーションに変更 */
+      background: radial-gradient(circle at top left, #2a0a0a 0, #000000 40%, #000000 100%);
     }
 
     .hero-inner {
@@ -157,17 +159,16 @@
       gap: 8px;
       padding: 4px 10px;
       border-radius: 999px;
-      background-color: #ffecec;
-      color: var(--primary-dark);
+      background-color: #330000; /* 暗い赤背景 */
+      color: #ffcccc; /* 明るい赤文字 */
       font-size: 12px;
       font-weight: 600;
       margin-bottom: 8px;
     }
 
-    /* 修正1：FV用画像スタイル */
     .hero-main-visual {
       width: 100%;
-      max-width: 320px; /* ロゴが見やすいサイズ感 */
+      max-width: 320px;
       height: auto;
       object-fit: contain;
       display: block;
@@ -296,17 +297,17 @@
       border-radius: 16px;
       border: 1px solid var(--border-light);
       padding: 20px;
-      background-color: #ffffff;
+      background-color: #1a1a1a; /* カード背景をダークグレーに */
     }
 
     .card--soft {
-      background-color: #fffafa;
-      border-color: #ffe0e0;
+      background-color: #222222;
+      border-color: #444444;
     }
 
     .card--accent {
       border-top: 4px solid var(--primary);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
     .badge-pill {
@@ -314,7 +315,7 @@
       padding: 3px 10px;
       border-radius: 999px;
       font-size: 11px;
-      background-color: #f0f0f0;
+      background-color: #333333;
       color: var(--text-sub);
       margin-bottom: 8px;
     }
@@ -351,7 +352,7 @@
     .highlight-box {
       border-left: 4px solid var(--primary);
       padding: 10px 12px;
-      background-color: #fff8f8;
+      background-color: #2a0a0a; /* ハイライト背景もダークに */
       font-size: 14px;
       margin-bottom: 16px;
     }
@@ -378,7 +379,7 @@
     .price-desc {
       font-size: 13px;
       color: var(--text-sub);
-      background-color: #f9f9f9;
+      background-color: #222222;
       padding: 12px;
       border-radius: 8px;
       margin-bottom: 20px;
@@ -392,7 +393,7 @@
       margin-bottom: 24px;
     }
     .stat-item {
-      background-color: #ffffff;
+      background-color: #1a1a1a;
       border: 1px solid var(--border-light);
       border-radius: 12px;
       padding: 12px 8px;
@@ -435,7 +436,7 @@
       height: auto;
       display: block;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
     /* Trainers */
@@ -446,7 +447,7 @@
       margin-bottom: 32px;
     }
     .trainer-card {
-      background-color: #ffffff;
+      background-color: #1a1a1a;
       border: 1px solid var(--border-light);
       border-radius: 16px;
       padding: 24px;
@@ -458,7 +459,7 @@
       object-fit: cover;
       border-radius: 50%;
       margin: 0 auto 16px;
-      border: 3px solid #fff5f5;
+      border: 3px solid #333333;
     }
     .trainer-name {
       font-weight: 700;
@@ -483,7 +484,7 @@
       border-radius: 12px;
       padding: 14px 14px 12px;
       border: 1px solid var(--border-light);
-      background-color: #ffffff;
+      background-color: #1a1a1a;
     }
 
     .step-label {
@@ -547,7 +548,7 @@
       border-radius: 12px;
       border: 1px solid var(--border-light);
       padding: 16px;
-      background-color: #ffffff;
+      background-color: #1a1a1a;
       font-size: 14px;
       height: 100%;
     }
@@ -568,7 +569,7 @@
       width: 100%;
       height: auto;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
       margin-bottom: 8px;
     }
     .map-container {
@@ -577,7 +578,7 @@
       border-radius: 12px;
       overflow: hidden;
       border: 1px solid var(--border-light);
-      background-color: #eeeeee;
+      background-color: #222;
     }
     .map-container iframe {
       display: block;
@@ -587,10 +588,11 @@
 
     /* Footer */
     footer {
-      background-color: #111111;
+      background-color: #000000;
       color: #f5f5f5;
       padding: 32px 0 18px;
       font-size: 13px;
+      border-top: 1px solid #333;
     }
 
     .footer-top {
@@ -614,7 +616,7 @@
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 10px;
       display: flex;
       flex-direction: column;
@@ -628,8 +630,8 @@
 
     /* Header CSS */
     .site-header {
-      background: #ffffff;
-      border-bottom: 1px solid #eee;
+      background: rgba(0, 0, 0, 0.95);
+      border-bottom: 1px solid #333;
       padding: 8px 16px;
       position: sticky;
       top: 0;
@@ -681,7 +683,7 @@
       height: 60px;
       border-radius: 50%;
       background-color: var(--primary);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
       border: none;
       z-index: 1100;
       display: flex;
@@ -697,7 +699,7 @@
     .menu-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.7);
       z-index: 1150;
       opacity: 0;
       visibility: hidden;
@@ -710,13 +712,13 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      background: #fff;
+      background: #1a1a1a;
       z-index: 1200;
       border-radius: 20px 20px 0 0;
       transform: translateY(100%);
       transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
       padding-bottom: env(safe-area-inset-bottom);
-      box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
     }
     .bottom-sheet.is-open { transform: translateY(0); }
 
@@ -725,7 +727,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 16px 24px;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid #333;
       font-weight: bold;
       color: var(--text-main);
     }
@@ -735,7 +737,7 @@
       font-size: 24px;
       cursor: pointer;
       padding: 0 8px;
-      color: #888;
+      color: #fff;
     }
 
     .bottom-sheet-list {
@@ -749,9 +751,9 @@
       color: var(--text-main);
       text-decoration: none;
       font-weight: 500;
-      border-bottom: 1px solid #fafafa;
+      border-bottom: 1px solid #333;
     }
-    .bottom-sheet-list li a:active { background: #f5f5f5; }
+    .bottom-sheet-list li a:active { background: #333; }
 
     /* Responsive Adjustments */
     @media (min-width: 768px) {
