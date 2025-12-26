@@ -164,9 +164,10 @@
       margin-bottom: 8px;
     }
 
+    /* 修正1：FV用画像スタイル */
     .hero-main-visual {
       width: 100%;
-      max-width: 320px;
+      max-width: 320px; /* ロゴが見やすいサイズ感 */
       height: auto;
       object-fit: contain;
       display: block;
@@ -228,6 +229,42 @@
       color: #ffffff;
       padding: 18px 16px;
       overflow: hidden;
+    }
+
+    .hero-side-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.7;
+      margin-bottom: 4px;
+    }
+
+    .hero-side-main {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .hero-side-sub {
+      font-size: 13px;
+      opacity: 0.8;
+      margin-bottom: 12px;
+    }
+
+    .hero-side-meta {
+      font-size: 11px;
+      opacity: 0.8;
+    }
+
+    .hero-side-pill {
+      position: absolute;
+      right: -40px;
+      bottom: -40px;
+      width: 120px;
+      height: 120px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #ffffff, #b30000 70%);
+      opacity: 0.18;
     }
 
     /* Cards & layout helpers */
@@ -1115,7 +1152,7 @@
               <td style="border-bottom:1px solid var(--border-light); padding:6px 0;"><strong>20,000円（税別）</strong></td>
             </tr>
             <tr>
-              <td style="border-bottom:1px solid var(--border-light); padding:6px 0;">1回料金</td>
+              <td style="border-bottom:1px solid var(--border-light); padding:6px 0;">初回体験料</td>
               <td style="border-bottom:1px solid var(--border-light); padding:6px 0;"><strong>2,500円（税別）</strong></td>
             </tr>
             <tr>
