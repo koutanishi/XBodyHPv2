@@ -164,10 +164,9 @@
       margin-bottom: 8px;
     }
 
-    /* 修正1：FV用画像スタイル */
     .hero-main-visual {
       width: 100%;
-      max-width: 320px; /* ロゴが見やすいサイズ感 */
+      max-width: 320px;
       height: auto;
       object-fit: contain;
       display: block;
@@ -220,51 +219,6 @@
     .hero-note {
       font-size: 12px;
       color: var(--text-sub);
-    }
-
-    .hero-side {
-      position: relative;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #111111, #2b2b2b);
-      color: #ffffff;
-      padding: 18px 16px;
-      overflow: hidden;
-    }
-
-    .hero-side-tag {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      opacity: 0.7;
-      margin-bottom: 4px;
-    }
-
-    .hero-side-main {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .hero-side-sub {
-      font-size: 13px;
-      opacity: 0.8;
-      margin-bottom: 12px;
-    }
-
-    .hero-side-meta {
-      font-size: 11px;
-      opacity: 0.8;
-    }
-
-    .hero-side-pill {
-      position: absolute;
-      right: -40px;
-      bottom: -40px;
-      width: 120px;
-      height: 120px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #ffffff, #b30000 70%);
-      opacity: 0.18;
     }
 
     /* Cards & layout helpers */
@@ -515,7 +469,7 @@
       font-weight: 600;
       padding: 16px 0;
       cursor: pointer;
-      list-style: none; /* Hide default triangle */
+      list-style: none;
       position: relative;
       padding-right: 24px;
     }
@@ -542,7 +496,7 @@
       line-height: 1.6;
     }
 
-    /* Voices (Carousel style) */
+    /* Voices */
     .voice-item {
       border-radius: 12px;
       border: 1px solid var(--border-light);
@@ -585,6 +539,67 @@
       height: 300px;
     }
 
+    /* ===== 電話番号スタイル ===== */
+    .tel-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+    .tel-link:hover {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* ヘッダー内の電話番号（PC幅のみ表示） */
+    .header-tel {
+      display: none;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .header-tel a {
+      color: var(--text-main);
+      text-decoration: none;
+    }
+    .header-tel a:hover {
+      color: var(--primary);
+    }
+
+    /* 店舗情報内の問い合わせボックス */
+    .contact-info-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background-color: #fff8f8;
+      border: 1px solid #ffe0e0;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+    }
+    .contact-info-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+    }
+    .contact-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary);
+      background-color: #ffecec;
+      border-radius: 4px;
+      padding: 2px 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
     /* Footer */
     footer {
       background-color: #111111;
@@ -611,6 +626,20 @@
       text-decoration: underline;
       text-decoration-style: dotted;
       text-underline-offset: 3px;
+    }
+
+    .footer-tel-link {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .footer-tel-link:hover {
+      color: #ffcccc;
+      text-decoration: none;
     }
 
     .footer-bottom {
@@ -650,6 +679,12 @@
       height: auto;
       width: auto;
       display: block;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
 
     .header-cta {
@@ -753,12 +788,11 @@
     }
     .bottom-sheet-list li a:active { background: #f5f5f5; }
 
-    /* Responsive Adjustments */
+    /* Responsive */
     @media (min-width: 768px) {
-      .header-inner { padding: 10px 0; }
       .hero-inner { flex-direction: row; align-items: center; }
       .hero-main { flex: 3; padding-right: 24px; }
-      .hero-side { flex: 2; padding: 20px 18px; }
+      .hero-side { flex: 2; }
       .hero-title { font-size: 32px; }
       .hero-point-list { grid-template-columns: 1fr 1fr; }
       .grid-two { grid-template-columns: 1.1fr 1fr; }
@@ -771,9 +805,9 @@
       .access-content { order: 1; }
       .access-map-area { order: 2; }
       .footer-top { grid-template-columns: 1.6fr 1fr 1fr; }
-      
-      /* PCではFAB非表示 */
       .fab-btn { display: none; }
+      /* PCで電話番号をヘッダーに表示 */
+      .header-tel { display: flex; }
     }
 
     @media (max-width: 640px) {
@@ -783,11 +817,11 @@
       .stat-val { font-size: 14px; }
       .stat-label { font-size: 10px; }
     }
-
   </style>
 </head>
 <body>
 
+  <!-- ===== HEADER ===== -->
   <header class="site-header">
     <div class="site-header-inner">
       <div class="header-logo">
@@ -795,15 +829,23 @@
              alt="X BODY Lab STATION ロゴ"
              class="header-logo-img">
       </div>
-      <a href="https://lin.ee/p3oSjwk"
-         class="header-cta"
-         target="_blank"
-         rel="noopener noreferrer">
-        LINEで体験予約する
-      </a>
+      <div class="header-right">
+        <!-- PC幅のみ電話番号を表示 -->
+        <div class="header-tel">
+          <span>📞</span>
+          <a href="tel:0424042466">042-404-2466</a>
+        </div>
+        <a href="https://lin.ee/p3oSjwk"
+           class="header-cta"
+           target="_blank"
+           rel="noopener noreferrer">
+          LINEで体験予約する
+        </a>
+      </div>
     </div>
   </header>
 
+  <!-- ===== HERO ===== -->
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-main">
@@ -840,11 +882,12 @@
         </ul>
         <div class="hero-cta-group">
           <a href="https://lin.ee/p3oSjwk" class="btn btn-primary" target="_blank" rel="noopener noreferrer">LINEで体験予約する</a>
-          <a href="https://lin.ee/p3oSjwk" class="btn btn-outline" target="_blank" rel="noopener noreferrer">LINEで質問してみる</a>
+          <!-- 電話ボタン -->
+          <a href="tel:0424042466" class="btn btn-outline">📞 042-404-2466 に電話する</a>
         </div>
         <p class="hero-note">
           ※LINEから「体験希望」「質問」などお気軽にメッセージをお送りください。<br>
-          スタッフが順次ご返信いたします。
+          お電話でのご相談も受け付けております（営業時間内：9:30〜21:30）。
         </p>
       </div>
       <div class="hero-side" style="padding: 0; background: none; box-shadow: none;">
@@ -872,7 +915,7 @@
           </ul>
           <p class="subnote">
             「やらなきゃ」と思っていても、続かないのには理由があります。<br>
-            X BODYは、その“続けにくさ”に正面から向き合ったトレーニングです。
+            X BODYは、その"続けにくさ"に正面から向き合ったトレーニングです。
           </p>
         </div>
         <div class="card card--soft">
@@ -1190,7 +1233,7 @@
           </ul>
           <p class="subnote">
             体験料金・所要時間などは、時期やキャンペーンにより異なる場合があります。<br>
-            まずはLINEからお気軽にお問い合わせください。
+            まずはLINEまたはお電話からお気軽にお問い合わせください。
           </p>
           <a href="https://lin.ee/p3oSjwk" class="btn btn-outline btn-block" target="_blank" rel="noopener noreferrer">LINEで体験トレーニングについて相談する</a>
         </div>
@@ -1208,10 +1251,10 @@
       <div class="steps">
         <div class="step-item">
           <div class="step-label">STEP 1</div>
-          <div class="step-title">LINEで予約・相談</div>
+          <div class="step-title">LINEまたはお電話で予約・相談</div>
           <div class="step-desc">
-            まずはLINEにて「体験希望」「質問」など簡単にメッセージをお送りください。<br>
-            ご希望の日時やご不安な点なども合わせてお知らせいただけます。
+            LINEにて「体験希望」とメッセージするか、<a href="tel:0424042466" style="color:var(--primary); font-weight:600;">042-404-2466</a> にお電話ください。<br>
+            ご希望の日時やご不安な点もお気軽にご相談いただけます。
           </div>
         </div>
         <div class="step-item">
@@ -1300,7 +1343,7 @@
       <h2 class="section-title-center">よくあるご質問</h2>
       <p class="section-lead">
         EMSトレーニングが初めての方からよくいただくご質問をまとめました。<br>
-        ここにない疑問は、LINEからお気軽にお尋ねください。
+        ここにない疑問は、LINEまたはお電話からお気軽にお尋ねください。
       </p>
       <div class="card">
         <details class="faq-item">
@@ -1343,12 +1386,13 @@
         </details>
       </div>
       <p class="subnote" style="margin-top:10px;">
-        ここにない疑問は、LINEでお気軽にご質問ください。
+        ここにない疑問は、LINEまたはお電話でお気軽にご質問ください。
       </p>
       <a href="https://lin.ee/p3oSjwk" class="btn btn-primary btn-block" target="_blank" rel="noopener noreferrer">LINEで質問してみる</a>
     </div>
   </section>
 
+  <!-- ===== ACCESS ===== -->
   <section class="section section--light" id="access">
     <div class="container">
       <h2 class="section-title-center">店舗情報・アクセス</h2>
@@ -1374,21 +1418,39 @@
               9:30〜21:30<br>
               ※曜日や祝日によって変動する場合があります。
             </p>
-            <p class="subnote">
-              体験・ご予約の最終受付時間など、詳細はLINEよりお気軽にお問い合わせください。
-            </p>
+
+            <!-- 電話番号 + LINE まとめボックス -->
+            <div class="contact-info-box">
+              <div class="contact-info-row">
+                <span class="contact-label">TEL</span>
+                <a href="tel:0424042466" class="tel-link">
+                  📞 042-404-2466
+                </a>
+              </div>
+              <div class="contact-info-row">
+                <span class="contact-label">LINE</span>
+                <a href="https://lin.ee/p3oSjwk" class="tel-link" target="_blank" rel="noopener noreferrer" style="color:var(--text-main);">
+                  💬 公式LINEでも受付中
+                </a>
+              </div>
+              <p class="subnote" style="margin:0; padding-top:6px; border-top:1px solid #ffe0e0; font-size:12px;">
+                受付時間：営業時間内（9:30〜21:30）※状況により対応が遅れる場合があります
+              </p>
+            </div>
+
             <a href="https://lin.ee/p3oSjwk" class="btn btn-outline btn-block btn-sm" target="_blank" rel="noopener noreferrer">道に迷いそうなときはLINEで聞く</a>
           </div>
         </div>
         <div class="access-map-area">
           <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4000.8109730304013!2d139.4809056757873!3d35.67298037258996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e4e34aa94e15%3A0x51d8fdb74d570bce!2z44OR44O844K944OK44Or44K444OgWEJPRFnvvIgg44Ko44OD44Kv44K544Oc44OH44Kj77yJ5bqc5Lit5bqXIDIw5YiGIOeXqeOBm-OCi0VNU-ODiOODrOODvOODi-ODs-OCsA!5e1!3m2!1sja!2sjp!4v1764827335241!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4000.8109730304013!2d139.4809056757873!3d35.67298037258996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e4e34aa94e15%3A0x51d8fdb74d570bce!2z44OR44O844K944OK44Or44K444OgWEJPRFnvvIgg44Ko44OD44Kv44K544Oe44OH44Kj77yJ5bqc5Lit5bqXIDIw5YiGIOeXqeOBm-OCi0VNU-ODiOODrOODvOODi-ODs-OCsA!5e1!3m2!1sja!2sjp!4v1764827335241!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ===== FOOTER ===== -->
   <footer>
     <div class="container">
       <div class="footer-top">
@@ -1398,7 +1460,11 @@
             〒183-0055 東京都府中市中町2-8-2 ローゼンハイム1F<br>
             営業時間（目安）：9:30〜21:30
           </div>
-          <div style="margin-top:8px; font-size:12px; color:#cccccc;">
+          <!-- フッターの電話番号 -->
+          <div style="margin-top:8px;">
+            <a href="tel:0424042466" class="footer-tel-link">📞 042-404-2466</a>
+          </div>
+          <div style="margin-top:6px; font-size:12px; color:#cccccc;">
             忙しいあなたのための、20分専用ジム。<br>
             全身EMSで、時間を味方につけるボディメイクを。
           </div>
@@ -1423,7 +1489,7 @@
       </div>
       <div class="footer-bottom">
         <div class="footer-cta-text">
-          LINEから24時間受付中：<a href="https://lin.ee/p3oSjwk" class="footer-link" target="_blank" rel="noopener noreferrer">https://lin.ee/p3oSjwk</a>
+          📞 <a href="tel:0424042466" class="footer-link">042-404-2466</a>　／　LINE：<a href="https://lin.ee/p3oSjwk" class="footer-link" target="_blank" rel="noopener noreferrer">https://lin.ee/p3oSjwk</a>
         </div>
         <div style="font-size:11px;">
           © X BODY Labo Fuchu. All rights reserved.
@@ -1450,6 +1516,8 @@
       <li><a href="#voices">お客様の声</a></li>
       <li><a href="#faq">よくある質問</a></li>
       <li><a href="#access">アクセス</a></li>
+      <!-- スマホメニューにも電話番号 -->
+      <li><a href="tel:0424042466">📞 042-404-2466</a></li>
     </ul>
   </nav>
 
@@ -1471,15 +1539,9 @@
         overlay.classList.remove('is-visible');
       }
 
-      if (fabBtn) {
-        fabBtn.addEventListener('click', openMenu);
-      }
-      if (closeBtn) {
-        closeBtn.addEventListener('click', closeMenu);
-      }
-      if (overlay) {
-        overlay.addEventListener('click', closeMenu);
-      }
+      if (fabBtn) fabBtn.addEventListener('click', openMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+      if (overlay) overlay.addEventListener('click', closeMenu);
 
       links.forEach(function (link) {
         link.addEventListener('click', closeMenu);
