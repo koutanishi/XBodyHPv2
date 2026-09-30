@@ -23,4 +23,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://koutanishi.github.io/xbodyhpv2/sitemap.xml
+Sitemap: https://xbodyhpv2.pages.dev/sitemap.xml
