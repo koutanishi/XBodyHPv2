@@ -4,8 +4,8 @@
   "description": "府中・中町の全身EMSパーソナルジム。20分でジム3〜4時間分のトレーニング。",
   "start_url": "./",
   "display": "browser",
-  "background_color": "#0b0b0c",
-  "theme_color": "#0b0b0c",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "lang": "ja",
   "icons": [
     { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" },
