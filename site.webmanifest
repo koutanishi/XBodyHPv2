@@ -1,0 +1,14 @@
+{
+  "name": "X BODY Labo 府中店",
+  "short_name": "X BODY 府中",
+  "description": "府中・中町の全身EMSパーソナルジム。20分でジム3〜4時間分のトレーニング。",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#0b0b0c",
+  "theme_color": "#0b0b0c",
+  "lang": "ja",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "images/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
